@@ -1,6 +1,9 @@
 " Do not try to emulate old-skool Vi (probably unneeded)
 set nocompatible
 
+let VIM_HOME = $HOME . '/.vim'
+let VIM_KEYS = $VIM_HOME . '/keys.vim'
+
 " Always start with line numbers turned on and make sure that there is
 " sufficient space so that columns don't hop around as the number gets larger
 set number
@@ -16,27 +19,7 @@ if &term == "xterm-256color" || &term == "xterm"
   set title
 endif
 
-" Limited key remappings
-let mapleader = "-"
-
-" Edit Vim configuration in a new buffer
-noremap <leader>ev :e $MYVIMRC<cr>
-noremap <leader>sv :source $MYVIMRC<cr>
-
-" Get rid of arrow keys in normal
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <left>  <nop>
-inoremap <right> <nop>
-
-noremap  <up>    <nop>
-noremap  <down>  <nop>
-noremap  <left>  <nop>
-noremap  <right> <nop>
-
-vnoremap <up>    <nop>
-vnoremap <down>  <nop>
-vnoremap <left>  <nop>
-vnoremap <right> <nop>
-
+if filereadable(expand($VIM_KEYS))
+  source $VIM_KEYS
+endif
 
