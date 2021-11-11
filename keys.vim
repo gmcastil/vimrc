@@ -1,4 +1,4 @@
-" Begin ~/.vim/maps.vim
+" Begin ~/.vim/keys.vim
 
 echom "Loading key maps..."
 
