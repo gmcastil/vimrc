@@ -1,0 +1,8 @@
+There is a find-manpage command that can be used to view the manpage for
+whatever is under the cursor.  For example, in C, placing the cursor under
+the `printf` function call and hitting <Leader>K will invoke the manpage
+for printf.
+
+TODO: Figure out how to do documentation look up for C and library calls 
+from within Vim.  There has to be a canonical way to do this without needing
+fancy plugins.

@@ -9,6 +9,11 @@ set numberwidth=4
 " Turn on filetype settings
 filetype plugin indent on
 
+" Only set syntax highlighting once
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
 " Set up code folding for Vim configuration files ------------------------ {{{
 augroup filetype_vim
   autocmd!
@@ -31,11 +36,5 @@ if &term == "xterm-256color" || &term == "xterm"
 endif
 " }}}
 
-" Build up a status line ------------------------------------------------- {{{
-" Set a statusline
-" Start with an empty status line
-" Mode   username@hostname /path/to/file          (filetype)      %  Row/Col
-" }}}
-
+source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
-

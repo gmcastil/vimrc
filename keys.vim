@@ -1,6 +1,6 @@
 " Begin ~/.vim/keys.vim
 
-echom "Loading key maps..."
+" echom "Loading key maps..."
 
 " Limited key remappings
 let mapleader = "-" 
