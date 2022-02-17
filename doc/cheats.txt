@@ -6,3 +6,6 @@ for printf.
 TODO: Figure out how to do documentation look up for C and library calls 
 from within Vim.  There has to be a canonical way to do this without needing
 fancy plugins.
+
+Helpful debugging trick - `:verbose set textwidth=?`
+

@@ -6,6 +6,8 @@ set nocompatible
 set number
 set numberwidth=4
 
+set hlsearch
+
 " Turn on filetype settings
 filetype plugin indent on
 
