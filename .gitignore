@@ -1,0 +1,6 @@
+# Directories
+build/
+
+# Temporary Files
+.netrwhist
+
