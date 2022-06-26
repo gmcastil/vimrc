@@ -5,20 +5,22 @@ set nocompatible
 " Initiate Pathogen
 execute pathogen#infect()
 
-" " Pick Gruvbox so my eyes dont bleed on black backgrounds ---------------- {{{
-" augroup gruvbox_theme
-"   autocmd!
-"   autocmd vimenter * ++nested colorscheme gruvbox
-" augroup END
-" " }}}
-
 " Always start with line numbers turned on and make sure that there is
 " sufficient space so that columns don't hop around as the number gets larger
 set number
 set numberwidth=4
 
+" Control line wrapping behavior
+set wrap
+" In particular, attempt to show as much as possible of the last line in the
+" window
+set display+=lastline
+
 " Highlight search or regex matching terms
 set hlsearch
+
+" Disable system bell (particularly annoying when using the Cygwin console)
+set belloff=esc
 
 " Turn on filetype settings
 filetype plugin indent on
@@ -51,11 +53,16 @@ endif
 " }}}
 
 " Jedi Vim configuration -------------------------------------------------- {{{
-
-" Don't start autocompletion as soon as the dot operator is pressed
+"
+" Set to 1 to start autocomplete as soon as the . dot operator is pressed
+" or to 0 to let the user to start typing before jumping in with a menu of
+" choices (good for large libraries lik `os` which will ambush the console with
+" an autocomplete menu once you type `os.`
 let g:jedi#popup_on_dot = 0
 " Select the first line of the completion menu
-let g_jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 0
+" Turn off / on showing calling signatures
+let g:jedi#show_call_signatures = 2
 " Disable the docstring window from popping up
 augroup jedi_disable_doc_win
   autocmd!
