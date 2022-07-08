@@ -6,3 +6,10 @@ for printf.
 TODO: Figure out how to do documentation look up for C and library calls 
 from within Vim.  There has to be a canonical way to do this without needing
 fancy plugins.
+
+Trying to debug a Vim script or understand when a variable was last assigned to?
+Give verbose mode a try:
+
+  :verbose set textwidth?
+
+Will let you know when the textwidth variable was changed last.
