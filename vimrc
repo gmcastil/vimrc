@@ -2,9 +2,6 @@
 " embedded world)
 set nocompatible
 
-" Initiate Pathogen
-execute pathogen#infect()
-
 " Always start with line numbers turned on and make sure that there is
 " sufficient space so that columns don't hop around as the number gets larger
 set number
