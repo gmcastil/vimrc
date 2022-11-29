@@ -1,3 +1,0 @@
-[submodule "bundle/table-mode"]
-	path = bundle/table-mode
-	url = git@personal:dhruvasagar/vim-table-mode.git
