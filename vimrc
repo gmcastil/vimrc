@@ -15,6 +15,9 @@ set display+=lastline
 
 " Highlight search or regex matching terms
 set hlsearch
+" Disable incremental searches from wrapping around - dead stop at the end of
+" the buffer
+set nowrapscan
 
 " Disable system bell (particularly annoying when using the Cygwin console)
 set belloff=esc
