@@ -4,3 +4,5 @@ build/
 # Temporary Files
 *.netrwhist
 
+# Ignore swamp files as well
+.*.swp
