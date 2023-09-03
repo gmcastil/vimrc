@@ -1,1 +1,2 @@
-My Vim configuration
+Incrementally improving Vim configuration.
+
