@@ -7,17 +7,24 @@ set nocompatible
 set number
 set numberwidth=4
 
-" Control line wrapping behavior
+" Control line wrapping behavior (text width is set on a file type basis
+" elsewhere)
 set wrap
 " In particular, attempt to show as much as possible of the last line in the
 " window
 set display+=lastline
 
+" Search configuration settings ------------------------------------------ {{{
 " Highlight search or regex matching terms
 set hlsearch
 " Disable incremental searches from wrapping around - dead stop at the end of
 " the buffer
 set nowrapscan
+" Case insensitive searching, unless the search pattern contains upper case
+" characters. See `:help smartcase` for more details
+set ignorecase
+set smartcase
+" }}}
 
 " Disable system bell (particularly annoying when using the Cygwin console)
 set belloff=esc
@@ -63,5 +70,8 @@ endif
 " compatible.
 packadd! matchit
 
+=======
+
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
+
