@@ -52,23 +52,16 @@ if &term == "xterm-256color" || &term == "xterm"
 endif
 " }}}
 
-" Jedi Vim configuration -------------------------------------------------- {{{
-"
-" Set to 1 to start autocomplete as soon as the . dot operator is pressed
-" or to 0 to let the user to start typing before jumping in with a menu of
-" choices (good for large libraries lik `os` which will ambush the console with
-" an autocomplete menu once you type `os.`
-let g:jedi#popup_on_dot = 0
-" Select the first line of the completion menu
-let g:jedi#popup_select_first = 0
-" Turn off / on showing calling signatures
-let g:jedi#show_call_signatures = 2
-" Disable the docstring window from popping up
-augroup jedi_disable_doc_win
-  autocmd!
-  autocmd FileType python setlocal completeopt-=preview
-augroup END
-" }}}
+" Package configuration -------------------------------------------------- {{{
+
+" Only install or enable packages / macros that are included with standard Vim
+" for now. I do not want to have to start installing plugins and managers and
+" stuff like that all over the place
+
+" Enable the "%" command to jump to matching HTML tags, if/else/endif Vim
+" scripts, XML tags, etc.  Not enabled by default because it isn't backwards
+" compatible.
+packadd! matchit
 
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
