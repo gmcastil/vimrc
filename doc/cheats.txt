@@ -13,3 +13,14 @@ Give verbose mode a try:
   :verbose set textwidth?
 
 Will let you know when the textwidth variable was changed last.
+
+Things I learned today
+- Use `:term` to open an actual terminal running bash
+- Window navigation uses `Ctrl-W hjkl`
+- 
+
+Wildmenu mode makes command line completion easier
+
+Also, autocomplete is a thing I shoudl use more
+- When in insert mode, ^x and so forth
+:q
