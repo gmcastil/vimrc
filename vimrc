@@ -59,6 +59,19 @@ if &term == "xterm-256color" || &term == "xterm"
 endif
 " }}}
 
+" Package configuration -------------------------------------------------- {{{
+
+" Only install or enable packages / macros that are included with standard Vim
+" for now. I do not want to have to start installing plugins and managers and
+" stuff like that all over the place
+
+" Enable the "%" command to jump to matching HTML tags, if/else/endif Vim
+" scripts, XML tags, etc.  Not enabled by default because it isn't backwards
+" compatible.
+packadd! matchit
+
+=======
+
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
 
