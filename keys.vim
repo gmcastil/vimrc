@@ -25,3 +25,9 @@ vnoremap <down>  <nop>
 vnoremap <left>  <nop>
 vnoremap <right> <nop>
 
+" Stop highlighting for the 'hlsearch' option. Doing it this way
+" will clear all of the highlights of the previous search without having to do
+" silly things like /asdf which trashes the result of the previous search, which
+" might get reused
+nnoremap <silent> <C-L>   :nohlsearch<CR>
+

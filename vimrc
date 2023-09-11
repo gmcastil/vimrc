@@ -6,6 +6,10 @@ set nocompatible
 " sufficient space so that columns don't hop around as the number gets larger
 set number
 set numberwidth=4
+set history=1000
+
+" Reread the contents of a file if it has changed on disk
+set autoread
 
 " Control line wrapping behavior (text width is set on a file type basis
 " elsewhere)
@@ -13,9 +17,22 @@ set wrap
 " In particular, attempt to show as much as possible of the last line in the
 " window
 set display+=lastline
+" Letting the cursor get to the top or bottom of the window before loading more
+" text is really annoying.  Resist the temptation to make this too large if you
+" use a lot of horizontal splits.
+set scrolloff=3
+set sidescroll=1
+set sidescrolloff=3
+" Better command line completion
+set wildmenu
+
+" TODO These all assume UTF-8 encoding, so we should add a check here for that
+" and if not, default back to something even simpler
+set listchars=tab:→·,trail:·,extends:»,precedes:«,nbsp:+,eol:$
+" Turn off list mode by default
+set nolist
 
 " Search configuration settings ------------------------------------------ {{{
-" Highlight search or regex matching terms
 set hlsearch
 " Disable incremental searches from wrapping around - dead stop at the end of
 " the buffer
@@ -70,7 +87,11 @@ endif
 " compatible.
 packadd! matchit
 
-=======
+" Enable the :man command shipped inside Vim's man filetype plugin
+if exists(':man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man' && !has('nvim')
+  runtime ftplugin/man.vim
+endif
+" }}}
 
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim

@@ -24,3 +24,28 @@ Wildmenu mode makes command line completion easier
 Also, autocomplete is a thing I shoudl use more
 - When in insert mode, ^x and so forth
 :q
+
+Folding
+
+zo	open one level of a fold
+zc	close one level of a fold
+za	toggle fold
+
+zO	opens fold recursively under the cursor
+zC	closes fold recursievely under the cursor
+zA	toggle fold recursively under the cursor
+
+zM	fold the whole file
+zR	unfold the whole file
+
+Splits
+
+C-w v	split vertically (same buffer)
+C-w h	split horiontally (same buffer)
+C-w q	close split but not buffer
+
+K	Run man page on the term under the cursor
+
+Tags
+----
+C-]	To go to the tag
