@@ -49,3 +49,6 @@ K	Run man page on the term under the cursor
 Tags
 ----
 C-]	To go to the tag
+
+C-d is a thing to show you what completions are available  I think
+

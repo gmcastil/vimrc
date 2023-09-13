@@ -25,6 +25,12 @@ set sidescroll=1
 set sidescrolloff=3
 " Better command line completion
 set wildmenu
+" Let Vim handle mouse behavior instead of the terminal - there are probably
+" instances where this will not work, but for now we'll use this
+set mouse=a
+
+" Hide buffers instead
+set hidden
 
 " TODO These all assume UTF-8 encoding, so we should add a check here for that
 " and if not, default back to something even simpler

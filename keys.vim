@@ -5,9 +5,10 @@
 " Limited key remappings
 let mapleader = "-" 
 
-" Edit Vim configuration in a new buffer
-noremap <leader>ev :e $MYVIMRC<cr>
+" Edit Vim configuration files in new buffers
+noremap <leader>ev :edit $MYVIMRC<cr>
 noremap <leader>sv :source $MYVIMRC<cr>
+noremap <leader>kv :edit $HOME/.vim/keys.vim<cr>
 
 " Get rid of arrow keys in normal
 inoremap <up>    <nop>
