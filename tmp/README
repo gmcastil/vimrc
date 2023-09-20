@@ -1,0 +1,4 @@
+This directory is here to store Vim swap files, which Vim will not use if 
+the location doesn't already exist. Leave this file here so that when the vimrc
+git repository is checked out, the directory won't have to be created by hand.
+

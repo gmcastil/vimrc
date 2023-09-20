@@ -4,5 +4,6 @@ build/
 # Temporary Files
 *.netrwhist
 
-# Ignore swamp files as well
-.*.swp
+# Ignore swap files as well as all the swap files in the tmp directory
+tmp/*.swp
+
