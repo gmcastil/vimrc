@@ -10,6 +10,10 @@ noremap <leader>ev :edit $MYVIMRC<cr>
 noremap <leader>sv :source $MYVIMRC<cr>
 noremap <leader>kv :edit $HOME/.vim/keys.vim<cr>
 
+" Buffer navigation that I like better
+noremap <leader>bn :bnext<cr>
+noremap <leader>bp :bprevious<cr>
+
 " Get rid of arrow keys in normal
 inoremap <up>    <nop>
 inoremap <down>  <nop>
