@@ -25,9 +25,6 @@ set sidescroll=1
 set sidescrolloff=3
 " Better command line completion
 set wildmenu
-" Let Vim handle mouse behavior instead of the terminal - there are probably
-" instances where this will not work, but for now we'll use this
-set mouse=a
 
 " Hide buffers instead
 set hidden
@@ -108,4 +105,5 @@ endif
 
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
+source $HOME/.vim/cscope_maps.vim
 

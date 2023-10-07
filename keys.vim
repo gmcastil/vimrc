@@ -1,7 +1,5 @@
 " Begin ~/.vim/keys.vim
 
-" echom "Loading key maps..."
-
 " Limited key remappings
 let mapleader = "-" 
 
@@ -49,4 +47,16 @@ vnoremap <right> <nop>
 " silly things like /asdf which trashes the result of the previous search, which
 " might get reused
 nnoremap <silent> <C-L>   :nohlsearch<CR>
+
+" Open a terminal in a new tab and set a few keybinds - this isn't intended to
+" be a replacement shell - just a quick way to open a terminal without
+" disturbing any existing window settings
+"noremap <silent> <leader>t :tab term<cr>
+" Since terminal mode consumes most special keys, we switch to the previous
+" tab this way
+"tnoremap <S-Tab> <C-W>:tabprevious<cr>
+" Or temporariliy put the buffer back in terminal normal mode
+"tnoremap <C-N> <C-W>N
+
+autocmd VimEnter * echom "Key maps loaded..."
 
