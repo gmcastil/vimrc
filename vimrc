@@ -42,6 +42,13 @@ set listchars=tab:→·,trail:·,extends:»,precedes:«,nbsp:+,eol:$
 " Turn off list mode by default
 set nolist
 
+" Window management ------------------------------------------------------ {{{
+"
+" Open new windows below and to the right of the existing ones
+set splitright
+set splitbelow
+" }}}
+
 " Search configuration settings ------------------------------------------ {{{
 set hlsearch
 " Disable incremental searches from wrapping around - dead stop at the end of
@@ -103,6 +110,11 @@ if exists(':man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man' && !has
 endif
 " }}}
 
+" Path configuration ----------------------------------------------------- {{{
+set path=
+set path+=./
+set path+=/usr/include/**
+"
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
 source $HOME/.vim/cscope_maps.vim
