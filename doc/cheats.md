@@ -70,7 +70,11 @@ Editing
 Searches
 
 Marks
+-----
 m{a-zA-Z} - sets a mark
+`{a-zA-Z} - jumps to the mark (using `'` instead of ``` will jump to first
+non-blank character)
+
 `. and '. jump to last changes
 
 Tags
@@ -78,6 +82,13 @@ Tags
 Jumplist / Changelist
 
 C-W C-W seems to switch between windows
+
+Often, I will want to open files that are in the same directory as a file I
+currently have open (but haven't `cd` to that directory). To open files in that
+location, use `:Ex` for `Explore`.  This also may be useful
+
+https://stackoverflow.com/questions/1708623/opening-files-in-the-same-folder-as-the-current-file-in-vim
+
 
 Tabs
 ----
