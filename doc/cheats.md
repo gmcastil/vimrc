@@ -49,6 +49,9 @@ K	Run man page on the term under the cursor
 Tags
 ----
 C-]	To go to the tag
+C-t	To return from tag (up the tag stack)
+C-w }	Preview in the split
+C-w z	Close the split (after it opens)
 
 C-d is a thing to show you what completions are available  I think
 
