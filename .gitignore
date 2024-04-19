@@ -5,6 +5,6 @@ build/
 *.netrwhist
 
 # Ignore swap files as well as all the swap files in the tmp directory
-tim/*.swo
+tmp/*.swo
 tmp/*.swp
 
