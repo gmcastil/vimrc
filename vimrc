@@ -157,7 +157,8 @@ endif
 set path=
 set path+=./
 set path+=/usr/include/**
-"
+" }}}
+
 source $HOME/.vim/statusline.vim
 source $HOME/.vim/keys.vim
 source $HOME/.vim/cscope_maps.vim
