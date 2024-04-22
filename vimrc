@@ -36,9 +36,18 @@ set hidden
 " with to keep .swp files from littering the filesystem
 set directory=~/.vim/tmp//,.,~/tmp,/var/tmp,/tmp
 
-" TODO These all assume UTF-8 encoding, so we should add a check here for that
-" and if not, default back to something even simpler
-set listchars=tab:→·,trail:·,extends:»,precedes:«,nbsp:+,eol:$
+" -- Locale specific settings "  ----------------------------------------- {{{
+"
+" This section might be somewhat font dependant too
+if $LANG == "en_US.UTF-8"
+  " Set characters to be used in 'list' mode
+  set listchars=tab:→·,trail:·,extends:»,precedes:«,nbsp:+,eol:$
+  " Also, to make the divider look smoother when working with multiple windows,
+  " use this
+  set fillchars+=vert:\▏
+endif
+" }}}
+
 " Turn off list mode by default
 set nolist
 
