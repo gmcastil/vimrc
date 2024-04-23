@@ -11,6 +11,11 @@ set history=1000
 " Reread the contents of a file if it has changed on disk
 set autoread
 
+" If a file doesn't have a fold level set yet, then close it all up
+if has('folding')
+  set foldlevelstart=0
+endif
+
 " Control line wrapping behavior (text width is set on a file type basis
 " elsewhere)
 set wrap
@@ -80,10 +85,10 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-" Colorscheme ------------------------------------------------------------ }}}
+" Colorscheme ------------------------------------------------------------ {{{
 " See https://github.com/morhetz/gruvbox/wiki/Terminal-specific for information
 " about setting up gruvbox to work properly with Terminator
-
+"
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)

@@ -9,6 +9,9 @@ noremap <leader>sv :source $MYVIMRC<cr>
 noremap <leader>dv :edit $HOME/.vim/doc/cheats.md<cr>
 noremap <leader>kv :edit $HOME/.vim/keys.vim<cr>
 
+" Toggle folds under cursor
+nnoremap <S-tab> za
+
 " Get rid of arrow keys in normal
 inoremap <up>    <nop>
 inoremap <down>  <nop>
