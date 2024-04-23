@@ -98,3 +98,9 @@ Tabs
 To open a buffer in a new tab, just split it but start with the tab command, so
 `:tab sb` and that will move it
 
+# Learning
+
+- Command mode with history is done with `q:`.  All this time, and that was what I
+was actually doing by accident?!
+- Folds set to completely closed in every new file that gets opened
+
