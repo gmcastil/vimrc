@@ -1,3 +1,7 @@
+function! s:InitWarning (msg)
+  echom a:msg
+endfunction
+
 " Do not try to emulate old-skool Vi (probably unneeded, but who knows in the
 " embedded world)
 set nocompatible
@@ -153,8 +157,13 @@ endif
 
 " Enable the "%" command to jump to matching HTML tags, if/else/endif Vim
 " scripts, XML tags, etc.  Not enabled by default because it isn't backwards
-" compatible.
-packadd! matchit
+" compatible. Note that Vim needs to be built with syntax highlighting and
+" compatiility mode needs to be of
+if has('syntax') && !&compatible
+  packadd! matchit
+else
+  call s:InitWarning("Could not enable matchit - Vim not compiled with +syntax")
+endif
 
 " Enable the :man command shipped inside Vim's man filetype plugin
 if exists(':man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man' && !has('nvim')
@@ -168,7 +177,31 @@ set path+=./
 set path+=/usr/include/**
 " }}}
 
-source $HOME/.vim/statusline.vim
-source $HOME/.vim/keys.vim
-source $HOME/.vim/cscope_maps.vim
+" External confguration -------------------------------------------------- {{{
+"
+" Set the statusline to something more useful (no plugins)
+if filereadable(expand("$HOME/.vim/statusline.vim"))
+  source $HOME/.vim/statusline.vim
+else
+  call s:InitWarning("No status line configuration found")
+endif
+
+" Set custom keybindings
+if filereadable(expand("$HOME/.vim/keys.vim"))
+  source $HOME/.vim/keys.vim
+else
+  call s:InitWarning("No user keybindings set.")
+endif
+
+" Settings for Cscope interface
+if has("cscope")
+  if filereadable(expand("$HOME/.vim/cscope_maps.vim"))
+    source $HOME/.vim/cscope_maps.vim
+  else
+    call s:InitWarning("No Cscope settings found")
+  endif
+else
+  call s:InitWarning("No Cscope support found. Try `vim --version | grep cscope`")
+endif
+" }}}
 

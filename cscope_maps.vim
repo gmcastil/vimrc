@@ -159,5 +159,7 @@ if has("cscope")
     "
     "set ttimeoutlen=100
 
+    autocmd VimEnter * echom "Cscope configuration loaded..."
+
 endif
 
