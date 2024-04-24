@@ -42,6 +42,9 @@ vnoremap <right> <nop>
 :nmap <S-ScrollWheelRight>	  <nop>
 :nmap <C-ScrollWheelRight>	  <nop>
 
+" List contents of all registers (that typically contain pasteable text).
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
+
 " Stop highlighting for the 'hlsearch' option. Doing it this way
 " will clear all of the highlights of the previous search without having to do
 " silly things like /asdf which trashes the result of the previous search, which
