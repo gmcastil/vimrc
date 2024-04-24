@@ -4,15 +4,19 @@
 let mapleader = "-" 
 
 " Edit Vim configuration files in new buffers
-noremap <leader>ev :edit $MYVIMRC<cr>
-noremap <leader>sv :source $MYVIMRC<cr>
-noremap <leader>dv :edit $HOME/.vim/doc/cheats.md<cr>
-noremap <leader>kv :edit $HOME/.vim/keys.vim<cr>
+noremap <silent> <leader>ev :edit $MYVIMRC<cr>
+noremap <silent> <leader>sv :source $MYVIMRC<cr>
+noremap <silent> <leader>dv :edit $HOME/.vim/doc/cheats.md<cr>
+noremap <silent> <leader>kv :edit $HOME/.vim/keys.vim<cr>
+
+" Switch to the previous buffer and delete the current one (not entirely what I
+" really want right now, but it's better than nothing).
+nnoremap <silent> <leader>bk :bp\|bd#<cr>
 
 " Toggle folds under cursor
 nnoremap <S-tab> za
 
-" Get rid of arrow keys in normal
+" Get rid of arrow keys in insert, normal and visual mode
 inoremap <up>    <nop>
 inoremap <down>  <nop>
 inoremap <left>  <nop>
