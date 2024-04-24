@@ -105,7 +105,11 @@ if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
   endif
 endif
 
+" Gruvbox configuration options need to be set before loading the colorscheme
 let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+" TODO: Should do a check to see if this colorscheme is actually installed or
+" loadable
 colorscheme gruvbox
 " Make sure to set the background to dark afterwards, or it will look uh...bad.
 set background=dark
