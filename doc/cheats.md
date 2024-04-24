@@ -1,4 +1,4 @@
-There is a find-manpage command that can be used to view the manpage for
+here is a find-manpage command that can be used to view the manpage for
 whatever is under the cursor.  For example, in C, placing the cursor under
 the `printf` function call and hitting <Leader>K will invoke the manpage
 for printf.
@@ -102,5 +102,31 @@ To open a buffer in a new tab, just split it but start with the tab command, so
 
 - Command mode with history is done with `q:`.  All this time, and that was what I
 was actually doing by accident?!
+- You can view the contents of all the registers by just running `:reg` or `:reg
+  [regname]`
+- The read command can read files into the current buffer (using `:r filename`)
+  or even the output of shell commands with `:r! shell command`. The latter
+  works with pipes, tab completion, all manner of stuff
 - Folds set to completely closed in every new file that gets opened
+- Registers are a thing now! Holy smokes, how have I never used these. Read the
+  help page for sure.
+
+Registers
+---------
+Can view all of the registers and their contents with `:reg` command. That's
+wild. Registers are accessed using the `"` operator. And then the normal rules
+of operation apply (i.e., noun + verb).  So to use the `r` register and yank
+omething into it, we would use `"ryiw` or `"ryy` to store a word or line
+respectively. And then to put or place it somewhere, we would use `"rp` and the
+contents would be placed at the current location.
+
+In normal mode `Ctrl-R` redoes something that was undone. But in insert mode, it
+gives access to registers. So, if something is stored in register `a` we can
+access it from insert mode by just using `Ctrl-R a` without leaving insert mode.
+
+Reading the `:help registers` is a really useful thing to do at this point, but
+another couple of useful things are that there is a last search pattern register
+which is read only and there is probably a way to search for a pattern and then
+use it in a regular expression or search and replace of some sort
+
 
