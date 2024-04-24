@@ -1,8 +1,8 @@
 " Create color groups for highlighting portions of the status line - these
 " colors assume that the color scheme for the terminal is gruvbox dark.
 " TODO: Verify this works when at an actual console
-highlight FilenameHighlightGroup cterm=bold ctermfg=3 ctermbg=239
-highlight FilenameHighlightGroupNC cterm=bold ctermfg=3 ctermbg=237
+highlight FilenameHighlightGroup cterm=bold ctermfg=11 ctermbg=239
+highlight FilenameHighlightGroupNC cterm=bold ctermfg=11 ctermbg=237
 highlight ColumnHighlightGroup cterm=bold ctermfg=1 ctermbg=239
 highlight ColumnHighlightGroupNC cterm=bold ctermfg=3 ctermbg=237
 
