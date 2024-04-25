@@ -1,5 +1,18 @@
 " Begin ~/.vim/keys.vim
 
+function! keys#cycle_numbering() abort
+  if exists('+relativenumber')
+    execute {
+          \ '00': 'set norelativenumber   | set number',
+          \ '01': 'set relativenumber     | set number',
+          \ '10': 'set relativenumber     | set nonumber',
+          \ '11': 'set norelativenumber   | set nonumber'}[&number . &relativenumber]
+  else
+    " No relative number, just toggle on and off
+    set number!<cr>
+  endif
+endfunction
+
 " Limited key remappings
 let mapleader = "-" 
 
@@ -15,6 +28,9 @@ nnoremap <silent> <leader>bk :bp\|bd#<cr>
 
 " Toggle folds under cursor
 nnoremap <S-tab> za
+
+" Cycle through relative and normal line numbering combinations
+nnoremap <silent> <leader>r :call keys#cycle_numbering()<cr>
 
 " Get rid of arrow keys in insert, normal and visual mode
 inoremap <up>    <nop>

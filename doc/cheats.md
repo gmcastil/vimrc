@@ -129,4 +129,12 @@ another couple of useful things are that there is a last search pattern register
 which is read only and there is probably a way to search for a pattern and then
 use it in a regular expression or search and replace of some sort
 
+Movement
+--------
+H - jump to high
+M - jump to medium
+L - jump to low
+
+}, { for jumping between empty lines
+
 
