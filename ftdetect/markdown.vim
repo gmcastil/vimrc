@@ -1,3 +1,6 @@
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['bash=sh', 'c', 'vhdl']
+" Apply syntax highlighting for fenced code blocks in Markdown files
+if has('syntax')
+  let g:markdown_fenced_languages = ['bash=sh', 'c', 'vhdl']
+endif
 
