@@ -25,12 +25,19 @@ noremap <silent> <leader>kv :edit $HOME/.vim/keys.vim<cr>
 " Switch to the previous buffer and delete the current one (not entirely what I
 " really want right now, but it's better than nothing).
 nnoremap <silent> <leader>bk :bp\|bd#<cr>
+nnoremap <silent> <leader><leader> :b#<cr>
 
 " Toggle folds under cursor
 nnoremap <S-tab> za
 
 " Cycle through relative and normal line numbering combinations
 nnoremap <silent> <leader>r :call keys#cycle_numbering()<cr>
+
+" Navigate splits using more natural keys
+nmap <silent> <C-j> :wincmd j<cr>
+nmap <silent> <C-k> :wincmd k<cr>
+nmap <silent> <C-h> :wincmd h<cr>
+nmap <silent> <C-l> :wincmd l<cr>
 
 " Get rid of arrow keys in insert, normal and visual mode
 inoremap <up>    <nop>
@@ -69,17 +76,7 @@ nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 " will clear all of the highlights of the previous search without having to do
 " silly things like /asdf which trashes the result of the previous search, which
 " might get reused
-nnoremap <silent> <C-L>   :nohlsearch<CR>
-
-" Open a terminal in a new tab and set a few keybinds - this isn't intended to
-" be a replacement shell - just a quick way to open a terminal without
-" disturbing any existing window settings
-"noremap <silent> <leader>t :tab term<cr>
-" Since terminal mode consumes most special keys, we switch to the previous
-" tab this way
-"tnoremap <S-Tab> <C-W>:tabprevious<cr>
-" Or temporariliy put the buffer back in terminal normal mode
-"tnoremap <C-N> <C-W>N
+nnoremap <silent> <leader>/   :nohlsearch<CR>
 
 autocmd VimEnter * echom "Key maps loaded..."
 
