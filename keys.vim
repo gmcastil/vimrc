@@ -56,18 +56,18 @@ vnoremap <left>  <nop>
 vnoremap <right> <nop>
 
 " Mouse wheel scrolling is not something I appreciate
-:nmap <ScrollWheelUp>		      <nop>
-:nmap <S-ScrollWheelUp>		    <nop>
-:nmap <C-ScrollWheelUp>		    <nop>
-:nmap <ScrollWheelDown>		    <nop>
-:nmap <S-ScrollWheelDown>		  <nop>
-:nmap <C-ScrollWheelDown>		  <nop>
-:nmap <ScrollWheelLeft>		    <nop>
-:nmap <S-ScrollWheelLeft>		  <nop>
-:nmap <C-ScrollWheelLeft>		  <nop>
-:nmap <ScrollWheelRight>		  <nop>
-:nmap <S-ScrollWheelRight>	  <nop>
-:nmap <C-ScrollWheelRight>	  <nop>
+:nmap <ScrollWheelUp>         <nop>
+:nmap <S-ScrollWheelUp>       <nop>
+:nmap <C-ScrollWheelUp>       <nop>
+:nmap <ScrollWheelDown>       <nop>
+:nmap <S-ScrollWheelDown>     <nop>
+:nmap <C-ScrollWheelDown>     <nop>
+:nmap <ScrollWheelLeft>       <nop>
+:nmap <S-ScrollWheelLeft>     <nop>
+:nmap <C-ScrollWheelLeft>     <nop>
+:nmap <ScrollWheelRight>      <nop>
+:nmap <S-ScrollWheelRight>    <nop>
+:nmap <C-ScrollWheelRight>    <nop>
 
 " List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
