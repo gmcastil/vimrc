@@ -1,3 +1,6 @@
+" Begin ~/.vim/vimrc
+scriptencoding utf-8
+
 function! s:InitWarning (msg)
   echom a:msg
 endfunction
@@ -5,6 +8,14 @@ endfunction
 " Do not try to emulate old-skool Vi (probably unneeded, but who knows in the
 " embedded world)
 set nocompatible
+
+" Better indent behavior
+set autoindent
+set smartindent
+
+" Fix backspace (this gets touched by defaults.vim but that isn't always
+" present)
+set backspace=indent,start,eol
 
 " Always start with line numbers turned on and make sure that there is
 " sufficient space so that columns don't hop around as the number gets larger
@@ -31,12 +42,24 @@ set display+=lastline
 " use a lot of horizontal splits.
 set scrolloff=3
 set sidescroll=1
-set sidescrolloff=3
+set sidescrolloff=10
 " Better command line completion
 set wildmenu
 
 " Hide buffers instead
 set hidden
+
+" Message configurations -------------------------------------------------- {{{
+"
+" There are oodles of message configurations, so start by resetting to the Vim
+" default (Vi and Vim are different)
+set shortmess&
+" Don't give file info when editing a file (or switching from one buffer to
+" another)
+set shortmess+=F
+" Ignore Vim intro
+set shortmess+=I
+" }}}
 
 " Tell Vim to store all of _our_ swap files in our own home directory if
 " possible, and then all the other. One condition that this creates might be
@@ -191,6 +214,11 @@ if filereadable(expand("$HOME/.vim/keys.vim"))
   source $HOME/.vim/keys.vim
 else
   call s:InitWarning("No user keybindings set.")
+endif
+
+" Add support for joining comments and deleting the comment leader
+if v:version > 703 || v:version == 703 && has ('patch541')
+  set formatoptions+=j
 endif
 
 " Settings for Cscope interface
