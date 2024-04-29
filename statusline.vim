@@ -1,3 +1,6 @@
+" Begin ~/.vim/statusline
+scriptencoding utf-8
+
 " Create color groups for highlighting portions of the status line - these
 " colors assume that the color scheme for the terminal is gruvbox dark.
 " TODO: Verify this works when at an actual console

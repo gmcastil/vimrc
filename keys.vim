@@ -1,4 +1,5 @@
 " Begin ~/.vim/keys.vim
+scriptencoding utf-8
 
 function! keys#cycle_numbering() abort
   if exists('+relativenumber')
