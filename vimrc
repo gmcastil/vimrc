@@ -40,9 +40,9 @@ set display+=lastline
 " Letting the cursor get to the top or bottom of the window before loading more
 " text is really annoying.  Resist the temptation to make this too large if you
 " use a lot of horizontal splits.
-set scrolloff=3
+set scrolloff=10
 set sidescroll=1
-set sidescrolloff=10
+set sidescrolloff=3
 " Better command line completion
 set wildmenu
 
