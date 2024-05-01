@@ -129,6 +129,22 @@ another couple of useful things are that there is a last search pattern register
 which is read only and there is probably a way to search for a pattern and then
 use it in a regular expression or search and replace of some sort
 
+to yank into a particular register, use `y<ank> <x>` where x is the register.
+You can also do relative line numbers or ranges.  For line numbers, something
+like
+
+:41y a
+
+This would yank the contents of line #41 into the a register, which can then be
+put by `"ap`
+
+To do a relative line, use specify it using a + or -.  So
+
+:-4y a
+
+And then, again, `"ap` would get the line 4 lines above and similarly, +4 would
+do 4 lines below
+
 Movement
 --------
 H - jump to high
@@ -136,5 +152,10 @@ M - jump to medium
 L - jump to low
 
 }, { for jumping between empty lines
+
+Editing
+-------
+Use C-o in insert mode to run a single command in normal mode and then switch
+back to insert mode
 
 
