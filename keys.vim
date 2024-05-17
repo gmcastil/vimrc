@@ -79,5 +79,10 @@ nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 " might get reused
 nnoremap <silent> <leader>/   :nohlsearch<CR>
 
+" Repeats the last search but unfolds the code enough to make the cursor
+" visible, and then centers the search result in the buffer
+nnoremap n nzvzz
+nnoremap N Nzvzz
+
 autocmd VimEnter * echom "Key maps loaded..."
 
