@@ -23,6 +23,9 @@ noremap <silent> <leader>sv :source $MYVIMRC<cr>
 noremap <silent> <leader>dv :edit $HOME/.vim/doc/cheats.md<cr>
 noremap <silent> <leader>kv :edit $HOME/.vim/keys.vim<cr>
 
+" Some Make / build specific shortcuts and keybinds
+noremap <silent> <leader>m :make<cr>
+
 " Switch to the previous buffer and delete the current one (not entirely what I
 " really want right now, but it's better than nothing).
 nnoremap <silent> <leader>bk :bp\|bd#<cr>
