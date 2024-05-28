@@ -159,3 +159,14 @@ Use C-o in insert mode to run a single command in normal mode and then switch
 back to insert mode
 
 
+Useful Tactics
+--------------
+Use `CTRL-d` to perform autocompletes on partial commands from commanfrom
+command-line mode. For example, to figure out how to close a tab, type `:tab`
+and then `CTRL-d` to see the various commands, in this case `tabclose`.
+
+The `:b` command can also take a substring of a file to switch between buffers
+quicker. Another thing to do is to list the buffers with `:ls` and then just
+type `:b` immediately, rather than escaping the menu.
+
+
