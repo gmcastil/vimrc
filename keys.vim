@@ -18,10 +18,10 @@ endfunction
 let mapleader = "-" 
 
 " Edit Vim configuration files in new buffers
-noremap <silent> <leader>ev :edit $MYVIMRC<cr>
+noremap <silent> <leader>ev :tabnew $MYVIMRC<cr>
 noremap <silent> <leader>sv :source $MYVIMRC<cr>
-noremap <silent> <leader>dv :edit $HOME/.vim/doc/cheats.md<cr>
-noremap <silent> <leader>kv :edit $HOME/.vim/keys.vim<cr>
+noremap <silent> <leader>dv :tabnew $HOME/.vim/doc/cheats.md<cr>
+noremap <silent> <leader>kv :tabnew $HOME/.vim/keys.vim<cr>
 
 " Some Make / build specific shortcuts and keybinds
 noremap <silent> <leader>m :make<cr>
