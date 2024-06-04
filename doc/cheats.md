@@ -158,7 +158,6 @@ Editing
 Use C-o in insert mode to run a single command in normal mode and then switch
 back to insert mode
 
-
 Useful Tactics
 --------------
 Use `CTRL-d` to perform autocompletes on partial commands from commanfrom
@@ -169,4 +168,7 @@ The `:b` command can also take a substring of a file to switch between buffers
 quicker. Another thing to do is to list the buffers with `:ls` and then just
 type `:b` immediately, rather than escaping the menu.
 
+Kernel Hacking
+A useful link for configuring Vim to work with cscope and tags when doing kernel
+development is [this](https://raw.githubusercontent.com/gmcastil/vim-gruvbox8/master/colors/gruvbox8.vim) post on Stack Overflow.
 
