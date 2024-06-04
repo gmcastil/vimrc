@@ -159,3 +159,6 @@ Use C-o in insert mode to run a single command in normal mode and then switch
 back to insert mode
 
 
+Kernel Hacking
+Useful link for vim and csope and tags
+https://stackoverflow.com/questions/33676829/vim-configuration-for-linux-kernel-development
