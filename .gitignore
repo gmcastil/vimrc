@@ -9,3 +9,5 @@ tmp/*.swn
 tmp/*.swo
 tmp/*.swp
 
+# Ignore views as well
+view/
