@@ -4,8 +4,8 @@ scriptencoding utf-8
 function! keys#cycle_numbering() abort
   if exists('+relativenumber')
     execute {
-          \ '00': 'set norelativenumber   | set number',
-          \ '01': 'set relativenumber     | set number',
+          \ '00': 'set relativenumber     | set number',
+          \ '01': 'set norelativenumber   | set number',
           \ '10': 'set relativenumber     | set nonumber',
           \ '11': 'set norelativenumber   | set nonumber'}[&number . &relativenumber]
   else

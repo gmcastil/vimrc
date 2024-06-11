@@ -20,6 +20,7 @@ set backspace=indent,start,eol
 " Always start with line numbers turned on and make sure that there is
 " sufficient space so that columns don't hop around as the number gets larger
 set number
+set relativenumber
 set numberwidth=4
 set history=1000
 
