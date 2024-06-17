@@ -68,6 +68,9 @@ Ctrl-B, Ctrl-F for moving up and down a full screen
 Ctrl-^ toggles between two buffers - it doesnt cycle through them so, just
 switches between them
 
+Whitespace navigation - Using the `}` and `{` keys, you can move up and down
+between whitespace regions, which is very useful when reading code
+
 Editing
 
 Searches

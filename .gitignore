@@ -11,3 +11,7 @@ tmp/*.swp
 
 # Ignore views as well
 view/
+
+# Not going to version plugins and these should be almost non-existent
+pack/
+

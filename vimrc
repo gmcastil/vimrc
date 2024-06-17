@@ -181,6 +181,24 @@ endif
 if exists(':man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man' && !has('nvim')
   runtime ftplugin/man.vim
 endif
+
+" If CoC is available, we enable tab completion
+if !empty(glob("~/.vim/pack/coc/start"))
+
+  " Use <tab> to trigger completion and navigate to the next complete item
+  function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  inoremap <silent><expr> <Tab>
+        \ coc#pum#visible() ? coc#pum#next(1) :
+        \ CheckBackspace() ? "\<Tab>" :
+        \ coc#refresh()
+else
+  call s:InitWarning("Tab completion not available")
+endif
+
 " }}}
 
 " Path configuration ----------------------------------------------------- {{{
