@@ -31,8 +31,8 @@ noremap <silent> <leader>m :make<cr>
 nnoremap <silent> <leader>bk :bp\|bd#<cr>
 nnoremap <silent> <leader><leader> :b#<cr>
 
-" Toggle folds under cursor
-nnoremap <S-tab> za
+" Toggle all folds under cursor
+nnoremap <S-tab> zA
 
 " Cycle through relative and normal line numbering combinations
 nnoremap <silent> <leader>r :call keys#cycle_numbering()<cr>
