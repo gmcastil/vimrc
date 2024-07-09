@@ -15,3 +15,6 @@ view/
 # Not going to version plugins and these should be almost non-existent
 pack/
 
+# The clangd path is machine dependent and not under revision control
+coc-settings.json
+
