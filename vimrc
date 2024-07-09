@@ -92,7 +92,10 @@ set splitbelow
 " }}}
 
 " Search configuration settings ------------------------------------------ {{{
-set hlsearch
+if has('extra_search')
+  set hlsearch
+  set incsearch
+endif
 " Disable incremental searches from wrapping around - dead stop at the end of
 " the buffer
 set nowrapscan
