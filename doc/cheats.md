@@ -175,3 +175,7 @@ Kernel Hacking
 A useful link for configuring Vim to work with cscope and tags when doing kernel
 development is [this](https://raw.githubusercontent.com/gmcastil/vim-gruvbox8/master/colors/gruvbox8.vim) post on Stack Overflow.
 
+
+To determine when a key was last set, use `:verbose imap <tab>` or something lie
+that
+
