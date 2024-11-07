@@ -46,3 +46,21 @@ fi
 # Return to where we started
 popd >/dev/null
 
+# Install the vim-commentary plugin to add commenting support
+commentary_dir="${vim_home}/pack/tpope/start"
+commentary_url="https://tpope.io/vim/commentary.git"
+
+mkdir -p "${commentary_dir}"
+pushd "${commentary_dir}" >/dev/null || \
+    { err "Could not change directory"; exit 1; }
+
+printf 'Installing commentary.vim...\n'
+if ! git clone "${commentary_url}" >/dev/null 2>&1; then
+    err "Could not clone commentary plugin at URL ${commentary_url}"
+    exit 1
+else
+    vim -u NONE -c "helptags commentary/doc" -c q
+fi
+# Return to where we started
+popd >/dev/null
+
