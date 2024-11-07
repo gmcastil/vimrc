@@ -1,0 +1,48 @@
+#!/bin/bash
+
+err () {
+    local msg
+    msg="${1}"
+    printf 'Error: %s\n' "${msg}" >&2
+    return
+}
+
+vim_home="${HOME}/.vim"
+
+# This needs to be run as a command, not sourced into a running subshell
+if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+    err "Script needs to be run as a command"
+    return 1
+fi
+
+command -v git 2>&1 >/dev/null || \
+    { err "Could not find git in PATH."; exit 1; }
+
+# Make a symbolic link 
+if ! ln -s "${PWD}" "${vim_home}"; then
+    err "Could not create a symlink to ${vim_home}"
+    exit 1
+fi
+
+# Make a location for using Vim's built-in package support (we install a very
+# minimal set of packages).
+mkdir -p "${vim_home}/pack"
+
+# Install the vim-fugitive plugin to add git support to Vim
+fugitive_dir="${vim_home}/pack/tpope/start"
+fugitive_url="https://tpope.io/vim/fugitive.git"
+
+mkdir -p "${fugitive_dir}"
+pushd "${fugitive_dir}" >/dev/null || \
+    { err "Could not change directory"; exit 1; }
+
+printf 'Installing fugitive.vim...\n'
+if ! git clone "${fugitive_url}" >/dev/null 2>&1; then
+    err "Could not clone fugitive plugin at URL ${fugitive_url}"
+    exit 1
+else
+    vim -u NONE -c "helptags fugitive/doc" -c q
+fi
+# Return to where we started
+popd >/dev/null
+
