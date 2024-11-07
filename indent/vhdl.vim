@@ -6,3 +6,4 @@ setlocal expandtab
 
 setlocal comments=:--
 setlocal formatoptions+=cro
+setlocal commentstring=--\ %s
