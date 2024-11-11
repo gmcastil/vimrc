@@ -1,2 +1,3 @@
-setlocal tabstop=4			" 4 spaces for tabs
-setlocal shiftwidth=4			" shift lines by 4 spaces
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal expandtab
