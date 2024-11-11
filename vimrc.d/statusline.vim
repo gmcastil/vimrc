@@ -1,4 +1,3 @@
-" Begin ~/.vim/statusline
 scriptencoding utf-8
 
 " Create color groups for highlighting portions of the status line - these
@@ -84,5 +83,3 @@ set noshowmode
 set laststatus=2
 
 set statusline=%!CreateStatusLine()
-
-autocmd VimEnter * echom "Status line set..."
