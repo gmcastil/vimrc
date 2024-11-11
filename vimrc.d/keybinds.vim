@@ -75,6 +75,12 @@ if exists('+relativenumber')
     nnoremap <silent> <leader>r :call utils#cycle_numbering()<cr>
 endif
 
+" Strip trailing whitespace from the buffer but preserve the history and search
+nnoremap <silent> <F5> :call Preserve("%s/\\s\\+$//e")<cr>
+" Strip trailing whitespace from visually selected lines
+xnoremap <silent> <F5> :call Preserve("'<,'>s/\\s\\+$//e")<CR>
+" }}}
+
 " Some Make / build specific shortcuts and keybinds
 noremap <silent> <leader>m :make<cr>
 " List contents of all registers (that typically contain pasteable text).
