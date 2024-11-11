@@ -15,6 +15,9 @@ nmap <silent> <C-k> :wincmd k<cr>
 nmap <silent> <C-h> :wincmd h<cr>
 nmap <silent> <C-l> :wincmd l<cr>
 
+" Close windows with less typing
+nmap <silent> <leader>c :wincmd c<cr>
+
 " Get rid of arrow keys in insert, normal and visual mode
 inoremap <up>    <nop>
 inoremap <down>  <nop>
