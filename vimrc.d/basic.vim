@@ -82,3 +82,8 @@ set splitbelow
 " Disable system bell (particularly annoying when using the Cygwin console)
 set belloff=esc
 
+" Add support for joining comments and deleting the comment leader
+if v:version > 703 || v:version == 703 && has ('patch541')
+  set formatoptions+=j
+endif
+

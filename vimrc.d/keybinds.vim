@@ -15,7 +15,12 @@ nmap <silent> <C-k> :wincmd k<cr>
 nmap <silent> <C-h> :wincmd h<cr>
 nmap <silent> <C-l> :wincmd l<cr>
 
-" Close windows with less typing
+" Rotate and swap windows mith less typing
+nmap <silent> <C-r> :wincmd r<cr>
+nmap <silent> <C-x> :wincmd x<cr>
+
+" Close windows with less typing...use a leader here because its easier to hit
+" and I do it a lot more anyway
 nmap <silent> <leader>c :wincmd c<cr>
 
 " Get rid of arrow keys in insert, normal and visual mode
