@@ -2,7 +2,6 @@ function! utils#cycle_numbering() abort
     if exists('+relativenumber')
 
         let state = &number . &relativenumber
-        echom "Current state: " . state
     
         if state ==# '00'
             set number
