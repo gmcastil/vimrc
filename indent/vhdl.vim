@@ -4,6 +4,3 @@ setlocal softtabstop=4
 setlocal textwidth=100
 setlocal expandtab
 
-setlocal comments=:--
-setlocal formatoptions+=cro
-setlocal commentstring=--\ %s

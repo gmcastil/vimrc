@@ -1,3 +1,7 @@
+" Top level Vim configuration just sources files in various locations. Note that
+" the paths are left hard coded so that we can visit any of these files
+" directly.
+
 try
     source $HOME/.vim/vimrc.d/globals.vim
     source $HOME/.vim/vimrc.d/utils.vim
