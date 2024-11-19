@@ -62,7 +62,7 @@ endtry
 try
     source $HOME/.vim/vimrc.d/filetype.vim
 catch
-    call PrintError('Coudl not load filetype configuration.')
+    call PrintError('Could not load filetype configuration.')
 endtry
 
 " Note that the status line uses some of the colors and such that are set up

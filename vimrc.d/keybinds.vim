@@ -82,6 +82,13 @@ nnoremap <silent> <F5> :call Preserve("%s/\\s\\+$//e")<cr>
 xnoremap <silent> <F5> :call Preserve("'<,'>s/\\s\\+$//e")<CR>
 " }}}
 
+" Plugin Maps -------------------------------------------------------------- {{{
+if exists("NERDTree")
+    nnoremap <leader>n :NERDTreeFocus<cr>
+    nnoremap <C-n> :NERDTreeToggle<cr>
+endif
+" }}}
+
 " Some Make / build specific shortcuts and keybinds
 noremap <silent> <leader>m :make<cr>
 " List contents of all registers (that typically contain pasteable text).

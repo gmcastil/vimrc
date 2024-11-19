@@ -7,6 +7,34 @@ err () {
     return
 }
 
+create_helptags () {
+    local plugin_dir
+    plugin_dir="${1}"
+    # Documentation is not necessarily required for Vim plugins, but if it's
+    # there then we build it
+    if [[ -d "${plugin_dir}/doc" ]]; then
+        if ! vim -u NONE -c "helptags ${plugin_dir}/doc" -c q; then
+            return 1
+        fi
+    fi
+    return 0
+}
+
+clone_plugin () {
+    local plugin_url
+    local plugin_dir
+    plugin_url="${1}"
+    plugin_dir="${2}"
+
+    if ! git clone "${plugin_url}" "${plugin_dir}"; then
+        return 1
+    else
+        if ! create_helptags "${plugin_dir}"; then
+            return 1
+        fi
+    fi
+}
+
 vim_home="${HOME}/.vim"
 
 # This needs to be run as a command, not sourced into a running subshell
@@ -19,7 +47,7 @@ command -v git 2>&1 >/dev/null || \
     { err "Could not find git in PATH."; exit 1; }
 
 # Make a symbolic link 
-if ! ln -s "${PWD}" "${vim_home}"; then
+if ! ln -s -f "${PWD}" "${vim_home}"; then
     err "Could not create a symlink to ${vim_home}"
     exit 1
 fi
@@ -63,4 +91,10 @@ else
 fi
 # Return to where we started
 popd >/dev/null
+
+nerdtree_dir="${vim_home}/pack/preservim/start/nerdtree"
+nerdtree_url="https://github.com/preservim/nerdtree.git"
+if ! clone_plugin "${nerdtree_url}" "${nerdtree_dir}"; then
+    err "Could not clone URL from ${nerdtree_url} or installation failed"
+fi
 
