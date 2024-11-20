@@ -92,9 +92,3 @@ fi
 # Return to where we started
 popd >/dev/null
 
-nerdtree_dir="${vim_home}/pack/preservim/start/nerdtree"
-nerdtree_url="https://github.com/preservim/nerdtree.git"
-if ! clone_plugin "${nerdtree_url}" "${nerdtree_dir}"; then
-    err "Could not clone URL from ${nerdtree_url} or installation failed"
-fi
-

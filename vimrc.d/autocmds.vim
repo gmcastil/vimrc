@@ -12,11 +12,3 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
-
-" Set up NERDTree behavior ----------------------------------------------- {{{
-augroup NerdTreeConfig
-    " Start NERDTree when Vim is started without file arguments.
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-augroup END
-" }}}
