@@ -76,6 +76,17 @@ if exists('+relativenumber')
     nnoremap <silent> <leader>r :call utils#cycle_numbering()<cr>
 endif
 
+augroup HDLKeybinds
+    autocmd!
+    " For Verilog or SystemVerilog files
+    autocmd FileType verilog nnoremap <buffer> <leader>sp :call utils#swap_hdl_port()<cr>
+    autocmd FileType systemverilog nnoremap <buffer> <leader>sp :call utils#swap_hdl_port()<cr>
+    " For VHDL files
+    autocmd FileType vhdl nnoremap <buffer> <leader>sp :call utils#swap_hdl_port()<cr>
+augroup END
+"
+nnoremap <silent> <leader>sp :call utils#swap_hdl_port()<cr>
+
 " Strip trailing whitespace from the buffer but preserve the history and search
 nnoremap <silent> <F5> :call Preserve("%s/\\s\\+$//e")<cr>
 " Strip trailing whitespace from visually selected lines
