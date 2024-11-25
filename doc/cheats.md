@@ -1,3 +1,22 @@
+1. Dot is the most power command in Vim and I don't use it nearly enough.
+
+2. I use `$a` to insert stuff at the end of a line all the time.  Using things
+   like `A` to do it allows it to be repeated with the `.` operator.  So if I
+   have a bunch of code like
+
+   ```verilog
+    logic   foo;
+    logic   bar;
+   ```
+   I can either add them manually which took ten keystrokes or use the latter
+   and it took 5.  It can also be executed on a range using the `normal`
+   command.
+
+
+
+
+
+
 here is a find-manpage command that can be used to view the manpage for
 whatever is under the cursor.  For example, in C, placing the cursor under
 the `printf` function call and hitting <Leader>K will invoke the manpage
@@ -56,10 +75,50 @@ C-w z	Close the split (after it opens)
 C-d is a thing to show you what completions are available  I think
 
 
-Navigation
-----------
-Various Motions
+## Navigation
+Word based motions:
+`w` - Move to the start of the next word
+`e` - Move to the end of the current or next word
+`b` - Move to the beginning of the previous word
+`ge` - Move to the end of the previous word
+Perhaps more importantly for software and hardware engineers, 
+`W` - Move to the start of the next WORD
+`E` - Move to the end of the current or new WORD
+`B` - Move to the beginning of the previous WORD
+`gE` - Move to the end of the previous WORD
 
+### Words vs WORDS in Vim
+
+#### **Words**
+- **Definition**: A *word* is a sequence of characters separated by whitespace, punctuation, or special characters (e.g., `.`, `,`, `-`, `_`, etc.).
+- **Delimiters**: Words are split by spaces **and punctuation**.
+- **Common Motions**:
+  - `w`: Jump to the start of the next word.
+  - `e`: Jump to the end of the current word.
+  - `b`: Jump to the start of the previous word.
+
+#### **WORDS**
+- **Definition**: A *WORD* is a sequence of characters separated only by whitespace. Punctuation and special characters are treated as part of the WORD.
+- **Delimiters**: WORDS are split **only by spaces or tabs**.
+- **Common Motions**:
+  - `W`: Jump to the start of the next WORD.
+  - `E`: Jump to the end of the current WORD.
+  - `B`: Jump to the start of the previous WORD.
+
+#### Summary Table
+
+| Feature          | Word (`w`, `e`, `b`)                    | WORD (`W`, `E`, `B`)                 |
+|-------------------|-----------------------------------------|---------------------------------------|
+| **Delimiters**    | Punctuation and whitespace split words. | Only whitespace splits WORDS.         |
+| **Granularity**   | Fine-grained (smaller segments).        | Coarse-grained (entire sequences).    |
+| **Use Case**      | Editing within structured text.         | Moving across larger blocks.          |
+
+#### Practical Use:
+- Use **words** for precise editing inside structured text like `this.long-classname`.
+- Use **WORDS** for quick navigation over blocks of text that include punctuation.
+
+
+`this.long.classname` this.is.wrong this.is.wrong
 H, M, L for moving cursor high, middle and low of the screen
 zt, zz, zb - move the screen so that the cursos is at the high, middle and low
 Ctrl-U, Ctrl-D for moving up and down a half screen
