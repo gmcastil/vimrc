@@ -100,8 +100,10 @@ if exists("NERDTree")
 endif
 " }}}
 
-" Some Make / build specific shortcuts and keybinds
-noremap <silent> <leader>m :make<cr>
+" Run :make silently in the background and then redraw the screen afterwards.
+" There are autocmds that should handle opening the QuickFix window based on the
+" result
+nnoremap <buffer> <silent> <leader>m :silent! make \| silent redraw!<cr>
 " List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
