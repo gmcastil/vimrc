@@ -82,3 +82,7 @@ set splitbelow
 " Disable system bell (particularly annoying when using the Cygwin console)
 set belloff=esc
 
+" Use the `par` program to format text if it's available
+if executable('par')
+    set formatprg=par
+endif
