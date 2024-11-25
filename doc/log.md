@@ -12,7 +12,7 @@
    and it took 5.  It can also be executed on a range using the `normal`
    command.
 
-3. Start using the `W`, `E`, `B`, and `gE` keys to move across word boundaries,
+   Start using the `W`, `E`, `B`, and `gE` keys to move across word boundaries,
    since they use WORDS instead of words, which happens a lot more often in my
    code.
 
@@ -22,7 +22,20 @@
    - Start navigating by WORDS.
    - Use marks with `m{letter}` to set and then `'{letter}` to return to the
      line or ```{letter}`` to return to the exact position.
-   - 
+   - Installed `par` to format paragraphs, so use `gq` to format the lines a
+     motion moves over (i.e., `gq3j` to reformat the current line and the next 3
+     lines below me) with `par` instead of the internal Vim formatter which is
+     done with `gw`. Also use the `ip` addition to format an entire paragraph at
+     the end.
+   
+   Compound Commands    Longhand        Mneumonic
+   ---------------------------------------------------------------------------
+   `C`                  `c$`
+   `s`                  `cl`            Deletes text into unnamed register and
+                                        starts insert mode
+   `S`                  `^C`
+   `I`                  `^i`
+   `A`                  `$a`
 
 
 
