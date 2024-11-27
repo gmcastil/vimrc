@@ -1,22 +1,3 @@
-1. Dot is the most power command in Vim and I don't use it nearly enough.
-
-2. I use `$a` to insert stuff at the end of a line all the time.  Using things
-   like `A` to do it allows it to be repeated with the `.` operator.  So if I
-   have a bunch of code like
-
-   ```verilog
-    logic   foo;
-    logic   bar;
-   ```
-   I can either add them manually which took ten keystrokes or use the latter
-   and it took 5.  It can also be executed on a range using the `normal`
-   command.
-
-
-
-
-
-
 here is a find-manpage command that can be used to view the manpage for
 whatever is under the cursor.  For example, in C, placing the cursor under
 the `printf` function call and hitting <Leader>K will invoke the manpage
