@@ -17,7 +17,7 @@ catch
 endtry
 
 " Pretty much all setings for things like search, scrolling, window behavior,
-" are in here.
+" leader key definition, etc. are in here.
 try
     source $HOME/.vim/vimrc.d/basic.vim
 catch

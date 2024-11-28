@@ -3,7 +3,8 @@
 set nocompatible
 
 " Define the leader key first before we load keybinds, plugins, etc.
-let mapleader = ","
+nnoremap <space> <Nop>
+let mapleader="\<space>"
 
 " Better indent behavior
 set autoindent
