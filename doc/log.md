@@ -81,3 +81,12 @@
      thing I do.  Delete all the text in the line and then replace it, but
      starting at `^` instead of the beginning of the line (e.g., changing a port
      or an indented line of code...yes, I do **that** all of the time).
+
+5. Interesting example of using `*` to search for all instances of a word,
+   then `cw` to change the word, followed by `n` to go to the next one, and
+   using `.` to repeat the last change.
+
+   Today use:
+   - Big WORD navigation instead of just words.
+   - More reminders to use marks
+   - Changed my leader key to space today
