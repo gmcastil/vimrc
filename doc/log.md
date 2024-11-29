@@ -1,4 +1,6 @@
-1. Dot is the most power command in Vim and I don't use it nearly enough.
+# Learning Vim
+
+1. Dot is the most powerful command in Vim and I don't use it nearly enough.
 
 2. I use `$a` to insert stuff at the end of a line all the time.  Using things
    like `A` to do it allows it to be repeated with the `.` operator.  So if I
@@ -90,3 +92,61 @@
    - Big WORD navigation instead of just words.
    - More reminders to use marks
    - Changed my leader key to space today
+
+6-8. The Dot Formula:
+   - One key to move, one key to execute as a paradigm. Which speaks to the next
+     point made in one of the other tips, which is to leave insert mode and go
+     back to normal mode
+   - The insert to normal mode switch is what determines the scope of the undo
+     command.
+   - That leads to the next idea, which is to make atomic changes.
+
+9. Compose repeatable changes (easier to undo or use the dot operator with)
+
+---
+# Sidebar on Operator Commands
+
+## Common Operator Commands
+
+| **Operator** | **Action**                               | **Example**                  |
+|--------------|------------------------------------------|-----------------------------|
+| `d`          | Delete text                              | `dw` (delete word), `d$` (delete to end of line) |
+| `c`          | Change text (delete + insert mode)       | `cw` (change word), `ciw` (change inner word)   |
+| `y`          | Yank (copy) text                         | `yw` (yank word), `yG` (yank to end of file)    |
+| `>`          | Indent text                              | `>}` (indent block), `>>` (indent current line) |
+| `<`          | Unindent text                            | `<}` (unindent block), `<<` (unindent current line) |
+| `g~`         | Toggle case                              | `g~w` (toggle case of word)                     |
+| `gu`         | Convert to lowercase                     | `guw` (lowercase word), `gU}` (lowercase block) |
+| `gU`         | Convert to uppercase                     | `gUw` (uppercase word), `gU}` (uppercase block) |
+| `!`          | Filter text through an external command  | `!}` (filter block through external command)   |
+| `=`          | Reformat (reindent) text                 | `=}` (reindent block), `==` (reindent line)    |
+
+---
+
+## What Motions Work with Operators
+
+| **Motion** | **Meaning**                                   | **Example**          |
+|------------|-----------------------------------------------|----------------------|
+| `w`        | Start of the next word                        | `dw` (delete to next word) |
+| `e`        | End of the current or next word               | `de` (delete to end of word) |
+| `b`        | Start of the current or previous word         | `db` (delete to previous word) |
+| `0`        | Beginning of the line                         | `d0` (delete to beginning of line) |
+| `^`        | First non-blank character on the line         | `d^` (delete to first non-blank character) |
+| `$`        | End of the line                               | `d$` (delete to end of line) |
+| `{` or `}` | Beginning or end of the current paragraph     | `d}` (delete to end of paragraph) |
+| `G`        | End of the file                               | `dG` (delete to end of file) |
+| `%`        | Match to a paired character (e.g., `(`, `{`)  | `d%` (delete inside matching brackets) |
+
+---
+
+## Using Text Objects with Operators
+
+| **Text Object** | **Meaning**                                  | **Example**           |
+|-----------------|----------------------------------------------|-----------------------|
+| `aw`            | A word (including surrounding whitespace)    | `daw` (delete a word with space) |
+| `iw`            | Inner word (excluding surrounding whitespace)| `diw` (delete inner word) |
+| `ap`            | A paragraph                                  | `dap` (delete a paragraph) |
+| `ip`            | Inner paragraph                              | `dip` (delete inner paragraph) |
+| `a(` or `i(`    | A pair of parentheses                        | `da(` (delete everything including `()`) |
+| `a{` or `i{`    | A block of `{}`                              | `da{` (delete everything inside `{}` including braces) |
+
