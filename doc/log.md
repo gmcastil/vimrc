@@ -198,3 +198,32 @@ indent, and `=` for autoindent **which I did not know about until today!**  And
 `!` for filtering through an external program.  Actually, there is a bit more
 here than this too - check out `:help operator` and note that there is a way to
 filter code through an external program for indenting code.
+
+12. Combining operators and motions (bonus tip on `commentary`). It's like a
+grammar:
+- Actions are created by combining an operator followed by a motion
+- When an operator command is invoked in duplicate, it acts upon the current
+line
+
+```bash
+find .
+ls -al
+for i in f; do
+    echo ${i}
+done
+```
+
+To comment all of that code, I would normally use visual line mode followed by
+`gcc`.  But a much better way is to use `gc4j` to comment from the top down or
+`gcap` from somewhere inside to comment the entire piece.  This works with
+indents too, which is huge - not because of the time it saves, but because it
+prevents me from having to think about formatting.
+
+Today:
+- Keep using WORDS
+- Use the `.` operator to repeat and think of things in terms of their atomicity
+  for repeating or undoing
+- Remember to think `<operator>` paired with `<motion>` and then paired with
+`file object`
+
+
