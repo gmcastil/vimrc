@@ -45,16 +45,23 @@ function CreateStatusLine() abort
   " number. For now, just the current buffer number is good enough.
   let sl .= "[%n]"
   " Username and hostname in an rsync friendly way
-  let sl .= "%10{$USER}@%-12{hostname()}:"
+  let sl .= "%10{$USER}@%{hostname()}:"
 
   " Active vs. inactive window differences
   if g:statusline_winid == win_getid(winnr())
     " Display the filename with the appropriate background color, depending on
     " whether we are in an active or inactive window
     let sl .= "%#FilenameHighlightGroup#%F%*"
+  else
+    let sl .= "%#FilenameHighlightGroupNC#%F%*"
+  endif
 
-    " Now begin right alignment
-    let sl .= "%="
+  " Now begin right alignment
+  let sl .= "%="
+  " Add the vim-fugitive Git statusline component
+  let sl .= "%{FugitiveStatusline()}"
+
+  if g:statusline_winid == win_getid(winnr())
     " And then add the row number, a colon character....but then
     let sl .= "%=%l:"
     " ...for active windows, we want to know if the current line is greater than
@@ -64,12 +71,7 @@ function CreateStatusLine() abort
     else
       let sl .= "%c"
     endif
-
   else
-    let sl .= "%#FilenameHighlightGroupNC#%F%*"
-
-    " Now begin right alignment
-    let sl .= "%="
     let sl .= "%=%l:%c"
   endif
 
