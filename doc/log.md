@@ -226,4 +226,16 @@ Today:
 - Remember to think `<operator>` paired with `<motion>` and then paired with
 `file object`
 
+13. Fix words in insert mode without leaving insert mode with common (some of
+    which were new to me) key controls.  The backspace key does what is normal,
+    as does the `<C-h>` key, there's also a `<C-w>` to backspace an entire word
+    and `<C-u>`. to delete and entire line and keep going without leaving insert
+    mode (didn't know this one and it also works in readline as well). That's
+    probably better than what I normally do, which is `<C-a><C-k>`. This would
+    make tmux easier to use, since my leader there is `<C-a>`.
+
+Today:
+- Start using `<C-u>` to delete an entire line, keep using the motion operators
+  as much as possible
+- Insert Normal mode using `<C-o>`
 
