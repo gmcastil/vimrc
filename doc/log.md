@@ -239,3 +239,60 @@ Today:
   as much as possible
 - Insert Normal mode using `<C-o>`
 
+14. Need to remap CAPSLOCK on a couple of my machines.
+15. I can apparently use `<C-r>{register}` without leaving insert mode, really?
+    Ok, yeah that is really useful.  So are a couple of other additional items
+    that insert mode supports.  There's the `i` and `a` keys for inserting at
+    the current position or appending to the current position.  Probably more
+    useful are `<S-I>` and `<S-A>` which insert and append to the beginning or
+    end of the current line.
+
+Today:
+- Keep using `<C-u>` to delete an entire insertion or append operation
+- Try to switch out of insert mode to paste registers as little as possible
+- The Vim mantra of operator paired with motion paired with file object
+
+16. Calculations in Place
+There is an expression register? 3 * 32 = 96.  That is probably a handy thing,
+since I use that sort of stuff a lot j I wonder if it's capable of doing hex
+math.  That'd be useful.
+
+- Paste from a register and keep moving with `<C-r>{reg}` since this is such a
+  common operation.
+- Use the expression register for things like HDMI video formats, resolutions,
+  etc
+
+17-18. Unicode and Digraphs
+This is probably not as important for me as it is for other people. Use `:help
+digraph-table` to look them up. Basically, can use the `<C-v>{non-digit}` to
+actually enter characters.  I personally hate non-ASCII characters in code
+because of how ECAD tools might not interpret them.
+
+19. Replace mode
+I did not realize that all this time I've been using the one-shot replace mode
+command `r{char}`.  I should probably use `R` to enter replacement mode. Also,
+there is a virtual replacement mode that I've not used which is probably more
+useful in some cases.
+
+20-21. Visual line mode
+I did not realize the `v` entered visual line character wise, so that's
+interesting. Also, `gv` will reselect the last viusual selection, which is
+handy.  So the keys I already use are `V` and `<C-v>` to do line and block
+visual.
+
+Today:
+- Use `R` and `gR` for replacement
+- How can I append to a set of lines in visual mode? Select using visual-block
+  mode, then move to the end of the block with `$` and then append with `A`,
+  insert the text, and then `<esc>` to be done
+
+```systemverilog
+logic [1:0] foo;
+logic [1:0] far;
+logic [1:0] bar;
+logic [1:0] baz;
+```
+Yeah, that's going in the book for real.
+
+
+
