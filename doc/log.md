@@ -294,5 +294,31 @@ logic [1:0] baz;
 ```
 Yeah, that's going in the book for real.
 
+22-26 Remainder of visual mode
+- Use the `vi` to visually select things and then operate on them
+- Definitely prefer operators to visual mode
+
+27. Command line mode is entered through `:` or when we press `/` for search, or
+    `<C-r>=` to access the expression register (in insert mode). I can even see
+    it from my statusline mode indicator.
+
+There are legions of `Ex` commands - check out `:h ex-cmd-index` for all of
+them. A reminder here of using the `<C-r>/` to insert the value of the `/`
+register, which holds the last search term.
+
+Normal mode acts on where the cursor currently is - Ex commands can be used on
+ranges anywhere, which is huge, because it means I can use do things locally
+without having to move my cursor, pollute the jump history, etc.
+
+Reminders today:
+- Use `I` to enter insert mode at the start of a line and `<C-u>` to delete back
+  to the start of the line
+- Use `<C-r>` from insert mode to insert a register
+- Marks using `m{letter}` to mark and return to a particular point
+
+Ex mode feels like its one of those underutilized things that I haven't really
+been taking advantage of.
+
+
 
 
