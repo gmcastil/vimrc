@@ -319,6 +319,35 @@ Reminders today:
 Ex mode feels like its one of those underutilized things that I haven't really
 been taking advantage of.
 
+28. Execute a command on one or more consecutive lines
+
+- Just entering a number with nothing else will jump us to that absolute line
+number
+- Ranges get entered with a `,`
+- Can follow up a number with a command like `print` or `substitute`
+- Can also use visual line mode to select text, then `:` to enter Ex mode, and
+  that range that was selected will be automatically prepended.
+- The `'<` mark stands for the first line of the visual selection and `'>` is
+  the last line of the visual selection
+- For ranges, we have `.` for the current position, `$` for the end of the
+  file, and `%` for the entire file.
+- Can specify addresses for lines using patterns...whoa.  Yeah, that's unreal.
+  The way it's done is `:/foo/,/bar/`, so to indicate this section here inside
+  the conditional, it would be `:/if/,/end if/`
+- Can also use address offsets by indicating a + or - and these can be used with
+  the current line indicator
+
+```vhdl
+if (foo = '1') then
+    baz <= '0';
+else
+    baz <= '1';
+end if;
+```
+
+Today:
+- Use subst, delete from Ex mode
+- Use the `.` to indicate the current line, and use relative line numbers
 
 
 
