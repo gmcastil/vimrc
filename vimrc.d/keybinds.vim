@@ -105,5 +105,5 @@ endif
 " result
 nnoremap <silent> <leader>m :silent! make \| silent redraw!<cr>
 " List contents of all registers (that typically contain pasteable text).
-nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<CR>
 

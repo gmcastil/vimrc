@@ -39,6 +39,7 @@ set sidescrolloff=3
 
 " Better command line completion
 set wildmenu
+set wildmode=longest,list
 " Hide buffers instead
 set hidden
 

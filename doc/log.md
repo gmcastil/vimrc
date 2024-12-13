@@ -349,5 +349,30 @@ Today:
 - Use subst, delete from Ex mode
 - Use the `.` to indicate the current line, and use relative line numbers
 
+29. Copying in Ex mode
+The format of the copy command actually makes sense now that I know what
+addresses and ranges are and how they get specified `:[range]copy {address}`.
+So, I just enter the range I want and where I want it to go and then use the
+`:copy` or `:t` command.  This makes absolute line numbers a lot more relevant.
+One interesting side effect here is that the copy command doesn't go through a
+register - it just performs the copy of text as a command (which makes sense,
+since it's a command not a text operation). You can also duplicate the current
+line using something like `:t.`.
 
+Text blocks can also be moved in Ex mode. So if I wanted to move that block....
+
+30. Using normal mode across a range
+
+```javascript
+var foo = 1
+var bar = 'a'
+var baz = 'z'
+var foobar = foo + bar
+var foobarbaz = foo + bar + baz
+```
+
+So the syntax for this command is `:{range}norm[al]! {commands}`
+
+31. The previous normal mode command can be repeated with `@:` which can be seen
+    by lookin at the contents of the `:` register.
 
