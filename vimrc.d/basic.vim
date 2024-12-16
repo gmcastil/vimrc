@@ -19,7 +19,6 @@ set backspace=indent,start,eol
 set number
 set relativenumber
 set numberwidth=4
-set history=1000
 
 " Reread the contents of a file if it has changed on disk
 set autoread
@@ -57,6 +56,11 @@ set shortmess+=I
 " Turn off list mode by default. Note that listchar values may be locale specific
 " and defined elsewhere.
 set nolist
+
+" Increase the default Ex command history
+if has('cmdline_hist')
+    set history=10000
+endif
 
 " Search configuration settings ------------------------------------------ {{{
 if has('extra_search')

@@ -376,3 +376,28 @@ So the syntax for this command is `:{range}norm[al]! {commands}`
 31. The previous normal mode command can be repeated with `@:` which can be seen
     by lookin at the contents of the `:` register.
 
+32. Tab completing Ex commands
+
+33. Can insert the current word under the cursor in command mode.  This doesn't
+    sound like it's all that useful.  But, consider the case that you want to do
+    a substitute command
+
+    ```verilog
+    wire        bar
+    wire        baz
+    wire        foo
+    ```
+
+To do this, we use the `c_CTRL-R c_CTRL-W` and `c_CTRL-R c_CTRL-A` combinations
+to insert a <cword> or <cWORD>.  This is really useful for getting help on
+vimscript or settings. Use the `:help` to enter command mine, and then insert
+the word under the cursor to look up the help file for it.
+
+34. The command line history window
+So this is how you do it!  Use `q:` to enter the command-line window and then
+one can manually modify and create a new command history.  Which is baller.
+There are five different histories that are each distinct - search, commands,
+debug, couple others.
+
+
+
