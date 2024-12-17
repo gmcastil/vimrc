@@ -399,5 +399,16 @@ one can manually modify and create a new command history.  Which is baller.
 There are five different histories that are each distinct - search, commands,
 debug, couple others.
 
-
+35. Running commands in the shell
+External programs get invoked with `!`
+- The current filename is referenced on the command line with `%`
+- To get stdout from the process we create, we can have it redirected to the
+  current buffer
+- So the get the current working directory output into the next few lines, use
+  `:read !ls -al`
+- The position of the `!` matters
+- The `:!{cmd}` takes a range in the usual way `:[range]!{cmd}` but what's even
+  better is that you can use motions and `!` to prepopulate the range
+- Useful sidebar for running a quick shell - just background Vim with `<C-z>`
+  and then run your shell commands and then `fg` to go back to Vim.
 
