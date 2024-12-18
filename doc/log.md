@@ -412,3 +412,9 @@ External programs get invoked with `!`
 - Useful sidebar for running a quick shell - just background Vim with `<C-z>`
   and then run your shell commands and then `fg` to go back to Vim.
 
+36. Text processing can be saved in a vimscript (as a sequence of Ex commands)
+    and then run
+
+37. Tracking open files with the buffer list
+- This is my first real exposure to the `[` and `]` keys, which are prefix keys
+
