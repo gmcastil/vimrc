@@ -418,3 +418,12 @@ External programs get invoked with `!`
 37. Tracking open files with the buffer list
 - This is my first real exposure to the `[` and `]` keys, which are prefix keys
 
+Today I learned about operatorfunc - first, understand that `'[,]'` describes a
+range. It starts from the line where the `[` mark is and covers to the line
+where the `]` is.  So, doing something like `:'[,']s/foo/bar` will run `:s` for
+each line in that range.  Pretty slick - what the `g@` does when working in the
+context of operatorfunc, is after it gets a motion, 1) sets the [ and ] marks to
+cover all he lines covered by the motion and then 2) calls operatorfunc with a
+single argument: a string that can be 'line', 'char', or 'block'. That's why in
+an operator function, one can use `'[,']s` to run an `:s` operation that will
+run on each line covered by whatever motion that was done.
