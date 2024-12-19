@@ -90,7 +90,7 @@ nnoremap <silent> <leader>sp :call utils#swap_hdl_port()<cr>
 " Strip trailing whitespace from the buffer but preserve the history and search
 nnoremap <silent> <F5> :call Preserve("%s/\\s\\+$//e")<cr>
 " Strip trailing whitespace from visually selected lines
-xnoremap <silent> <F5> :call Preserve("'<,'>s/\\s\\+$//e")<CR>
+xnoremap <silent> <F5> :call Preserve("'<,'>s/\\s\\+$//e")<cr>
 " }}}
 
 " Plugin Maps -------------------------------------------------------------- {{{
@@ -105,5 +105,8 @@ endif
 " result
 nnoremap <silent> <leader>m :silent! make \| silent redraw!<cr>
 " List contents of all registers (that typically contain pasteable text).
-nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<CR>
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
+
+" Using operator-pending mode, allow quick marking of VHDL signals for debug
+nnoremap <leader>d :set operatorfunc=utils#mark_debug_vhdl<cr>g@
 

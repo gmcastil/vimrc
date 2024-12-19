@@ -51,3 +51,9 @@ function! utils#swap_hdl_port() abort
     call setpos('.', l:save_cursor)
 
 endfunction
+
+" Transforms VHDL signal declarations (excluding those commented out) into MARK_DEBUG attributes
+function! utils#mark_debug_vhdl(type) abort
+    '[,']s/\%(^--.*\)\@<!signal\s*\(.*\):.*/attribute MARK_DEBUG of \1: signal is "TRUE";/
+endfunction
+
