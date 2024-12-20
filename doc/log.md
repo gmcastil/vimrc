@@ -417,6 +417,8 @@ External programs get invoked with `!`
 
 37. Tracking open files with the buffer list
 - This is my first real exposure to the `[` and `]` keys, which are prefix keys
+  (I need to look into how to navigate buffers and the quickfix window more
+  quickly).
 
 Today I learned about operatorfunc - first, understand that `'[,]'` describes a
 range. It starts from the line where the `[` mark is and covers to the line
