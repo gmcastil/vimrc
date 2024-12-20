@@ -429,3 +429,28 @@ cover all he lines covered by the motion and then 2) calls operatorfunc with a
 single argument: a string that can be 'line', 'char', or 'block'. That's why in
 an operator function, one can use `'[,']s` to run an `:s` operation that will
 run on each line covered by whatever motion that was done.
+
+```text
+<gmcastil> the single line still has the problem of not being extensible - what if i want it to match one of several regex?
+<gmcastil> for example, i want to mark signals in both Verilog and VHDL, which have different syntax, different rules for marking, and then in both, there are different kinds of signals - it gets larger really fast
+<gmcastil> crap...starting to sound like a plugin actually
+<igemnace> gmcastil: you can just extend utils#mark_debug for that. you can add whatever statements you want inside it
+<gmcastil> oh, so call different functions within it for various conditions?
+<gmcastil> but then the visual line version doesnt accomplish the same thing
+<igemnace> more like https://0x0.st/XC2R.txt
+<igemnace> if you had to stop working linewise you'd have to jump through more hoops... but doable
+<gmcastil> so the general idea is that the heavy lifting is all done by the function mark_debug() which can be called from visual line mode and then an operatorfunc wrapper exists
+<igemnace> right!
+<gmcastil> so the visual line mode comes first basically
+<gmcastil> ah, i had it backwards
+<gmcastil> is that a generally useful way to do this sort of thing? get it to work with visual line mode first, and then extend it to ranges?
+<igemnace> more the other way around: if you can work with ranges, you automatically work with visual line mode for free (because '<,'> is a range that covers the visual selection)
+<igemnace> operatorfunc is more of a special case. you kinda have to prepare a function specifically fit for it
+<gmcastil> and then operator func is just a special instance of workign with a specific kind of range?
+<igemnace> yep
+<gmcastil> copy that, that makes a lot of sense
+<gmcastil> you should uh...rewrite that portion of the manual
+<igemnace> yeah i'm thinking perhaps start with a minimally illustrative example
+<igemnace> one for that elusive Free Time i keep hearing about
+```
+
