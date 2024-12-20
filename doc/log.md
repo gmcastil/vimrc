@@ -454,3 +454,8 @@ run on each line covered by whatever motion that was done.
 <igemnace> one for that elusive Free Time i keep hearing about
 ```
 
+37. Buffers are a normal part of the workflow, but some people apparently have a
+    problem with this and need tabs to do it all for them.
+
+The arglist is probably going to be something that I need to integrate into my
+workflow.
