@@ -53,7 +53,13 @@ function! utils#swap_hdl_port() abort
 endfunction
 
 " Transforms VHDL signal declarations (excluding those commented out) into MARK_DEBUG attributes
-function! utils#mark_debug_vhdl(type) abort
-    '[,']s/\%(^--.*\)\@<!signal\s*\(.*\):.*/attribute MARK_DEBUG of \1: signal is "TRUE";/
+function! utils#mark_debug() abort
+    let l:filetype = &filetype
+    if l:filetype == 'vhdl'
+        silent! s/\%(^\s*--.*\)\@<!signal\s*\(.*\):.*/attribute MARK_DEBUG of \1: signal is "TRUE";/
+    endif
 endfunction
 
+function! utils#mark_debug_operatorfunc(type) abort
+    '[,']call utils#mark_debug()
+endfunction

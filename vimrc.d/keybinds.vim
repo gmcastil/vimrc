@@ -108,5 +108,6 @@ nnoremap <silent> <leader>m :silent! make \| silent redraw!<cr>
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
 
 " Using operator-pending mode, allow quick marking of VHDL signals for debug
-nnoremap <silent> <leader>d :set operatorfunc=utils#mark_debug_vhdl<cr>g@
+nnoremap <silent> <leader>d :set operatorfunc=utils#mark_debug_operatorfunc<cr>g@
+xnoremap <silent> <leader>d :call utils#mark_debug()<cr>
 
