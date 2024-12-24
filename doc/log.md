@@ -459,3 +459,16 @@ run on each line covered by whatever motion that was done.
 
 The arglist is probably going to be something that I need to integrate into my
 workflow.
+
+38-39. The argument list is a way of grouping buffers together into a collection
+- Can apply Ex commands to all of them using the `:argdo` command.
+- Globbing is your friend
+
+40. Window splits
+- The `<C-w>_` and `<C-w>|` commands and their numbered variants can be used to
+  maximize window height or width as well as 
+- Window rotating is done with `CTRL-W_R`
+- There are a lot of window controls that might be useful and I should read the
+  page here on `:help CTRL-W`
+
+
