@@ -7,6 +7,24 @@ err () {
     return
 }
 
+warn () {
+    local msg
+    msg="${1}"
+    printf 'Warning: %s\n' "${msg}" >&2
+    return
+}
+
+check_prog () {
+    local prog
+    local retval
+    prog="${1}"
+    retval=0
+    if ! command -v "${prog}" >/dev/null 2>&1; then
+        retval=1
+    fi
+    return "${retval}"
+}
+
 # Installs a plugin from a git repository URL and creates help tags if a doc
 # directory is present
 clone_plugin () {
@@ -37,6 +55,7 @@ if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
     return 1
 fi
 
+# Need to have git installed to do anything useful from here on
 command -v git >/dev/null 2>&1 || \
     { err "Could not find git in PATH."; exit 1; }
 
@@ -62,6 +81,12 @@ plugin_urls=(
     "https://github.com/chrisbra/Recover.vim"
 )
 
+binaries=(
+    "cscope"
+    "ctags"
+    "tmux"
+)
+
 # Iterate over URL and directories to install these plugins
 retval=0
 printf 'Installing plugins'
@@ -74,6 +99,13 @@ for i in "${!plugin_dirs[@]}"; do
 done
 printf '\n' >&1
 
-exit "${retval}"
+# Now, check for some binaries that need to be installed
+for i in "${binaries[@]}"; do
+    if ! check_prog "${i}"; then
+        warn "No ${i} executable found in PATH or package not installed on system"
+        retval=1
+    fi
+done
 
+exit "${retval}"
 
