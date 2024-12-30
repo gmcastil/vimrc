@@ -84,6 +84,17 @@ catch
     call PrintError('Could not load builtin package configuration.')
 endtry
 
+" Set up Cscope keybinds
+if has('cscope')
+    try
+        source $HOME/.vim/vimrc.d/cscope_maps.vim
+    catch
+        call PrintError('Could not load Cscope maps')
+    endtry
+else
+    call PrintError('No Cscope support was found')
+endif
+
 " Set up keybinds
 try
     source $HOME/.vim/vimrc.d/keybinds.vim
