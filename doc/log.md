@@ -471,4 +471,13 @@ workflow.
 - There are a lot of window controls that might be useful and I should read the
   page here on `:help CTRL-W`
 
+41. Using tabs to contain different workspaces
+- I already do this, but the `:lcd` command was new and that's awesome for tags
+  and cscope output for sure
+- So, `:lcd` sets a local working directory for a window, but `:windo lcd
+  {path}` lets us set it for the entire tab page which is likely what i want
+  more than anything.
+- This is probably a really important tactic for working with multiple
+  repositories that use tags and cscope files. Set the local window working
+  directory for each tab
 
