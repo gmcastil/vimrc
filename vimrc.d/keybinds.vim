@@ -7,6 +7,12 @@ noremap <silent> <leader>dv :tabnew $HOME/.vim/doc/cheats.md<cr>
 noremap <silent> <leader>kv :tabnew $HOME/.vim/vimrc.d/keybinds.vim<cr>
 " }}}
 
+" File Operations  --------------------------------------------------------- {{{
+
+" Use '%%' instead of '%:h<Tab>' in command mode to insert the path to the
+" directory of the current buffer
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " Navigation --------------------------------------------------------------- {{{
 
 " Navigate splits using more natural keys
