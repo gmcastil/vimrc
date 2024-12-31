@@ -481,3 +481,6 @@ workflow.
   repositories that use tags and cscope files. Set the local window working
   directory for each tab
 
+42. How have I not been using the `:find` command or the `%:h<Tab>` expansion to
+    edit files in the location of the current buffer
+
