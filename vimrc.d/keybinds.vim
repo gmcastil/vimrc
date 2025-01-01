@@ -13,6 +13,8 @@ noremap <silent> <leader>kv :tabnew $HOME/.vim/vimrc.d/keybinds.vim<cr>
 " directory of the current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" }}}
+
 " Navigation --------------------------------------------------------------- {{{
 
 " Navigate splits using more natural keys
@@ -106,6 +108,8 @@ if exists("NERDTree")
 endif
 " }}}
 
+" Leader Mappings ---------------------------------------------------------- {{{
+
 " Run :make silently in the background and then redraw the screen afterwards.
 " There are autocmds that should handle opening the QuickFix window based on the
 " result
@@ -117,3 +121,4 @@ nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
 nnoremap <silent> <leader>d :set operatorfunc=utils#mark_debug_operatorfunc<cr>g@
 xnoremap <silent> <leader>d :call utils#mark_debug()<cr>
 
+" }}}

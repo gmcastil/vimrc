@@ -484,3 +484,19 @@ workflow.
 42. How have I not been using the `:find` command or the `%:h<Tab>` expansion to
     edit files in the location of the current buffer
 
+43. The find command can be used along with the `path` variable which some
+    people suggest adding `**` to in order to get recursive find to work.
+
+- I'm not entirely sure I like that (neither is Tim Pope)
+- I would need project specific settings and then have to be a lot more
+  disciplined about using Vim from a single location 
+
+44. Using netrw for fun and profit - I'm not sure I agree yet.
+
+45. Saving a file as super user. This comes up a lot and it's really annoying.
+    To get around this, we exploit the ability to write to external commands,
+    including the `sudo tee` command.  To write the contents of a file as the
+    super user, we use `:write! sudo tee % > /dev/null`
+
+
+
