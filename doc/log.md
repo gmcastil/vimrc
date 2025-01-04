@@ -499,4 +499,18 @@ workflow.
     super user, we use `:write! sudo tee % > /dev/null`
 
 
+I'm trying to grab a subset of my buffers and create an arglist that uses them.
+One tactic is to create an empty buffer and then read the output of find into
+the buffer like this: `:read! find . -type f -iname '*.vhd'`. This works great.
+Or, even better, I can read the contents directly into  the arglist command with
+something like
+```vim
+args `find . -type f -iname '*.vhd'`
+argadd foo.vhd
+```
+
+47. The `h` and `k` keys are somethign I should rarely use. Instead, focus on
+    using character search commands more often (more on this in Tip 50).
+
+48. Display lines vs real lines
 
