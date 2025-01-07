@@ -509,8 +509,26 @@ args `find . -type f -iname '*.vhd'`
 argadd foo.vhd
 ```
 
-47. The `h` and `k` keys are somethign I should rarely use. Instead, focus on
-    using character search commands more often (more on this in Tip 50).
+46-49. Moving by lines, display lines, and words
 
-48. Display lines vs real lines
+50. Find by character is a tactic I don't use enough. Let's reveiw the motions:
+
+`f{char}`   Search to the next occurrence of the `char`
+`F{char}`   Reverse to the previous occurrence of the `char`
+`t{char}`   Search to the next occurrence of the `char`
+`T{char}`   Reverse to the previous occurrence of the `char`
+`;`         Repeats the last character-search command
+`,`         Reverses the last character-search command
+
+Improve your writing by deleting excellent adjectives.
+
+From Ingo Karkat on SO: *The pattern in Vi(m) is: Move around in normal
+mode. Make short inserts (a word here, a sentence there). Or manipulate
+the text with Ex commands like :substitute. Repeat.*
+
+I do not use Ex commands as much as I should
+
+Today:
+- Use R and gR to replace
+- Use A to append to end of line (dont move there and then append to word)
 
