@@ -64,7 +64,7 @@ endif
 
 " Search configuration settings ------------------------------------------ {{{
 if has('extra_search')
-	set hlsearch
+	set nohlsearch
 	set incsearch
 endif
 

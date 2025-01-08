@@ -532,3 +532,28 @@ Today:
 - Use R and gR to replace
 - Use A to append to end of line (dont move there and then append to word)
 
+51. Using search to navigate
+
+search for your target
+it only takes a moment
+to get where you want
+
+The idea is to use incremental search to jump to the appropriate place and this
+can be done in visual mode too or better as part of an operator pending
+operation.  So lets say we wan to eliminate the word target to moment (exclusive
+of the last word, which is a common use case).
+
+search for your target
+it only takes a moment
+to get where you want
+
+Today:
+- This is a huge thing, using the `f`, `F`, `t`, and `T` with search and delete
+  and also yank too, I suppose
+- This happens a lot, where I want to eliminate a portion of one line and some
+  of the next.  Using visual line mode to select it by hand is really tedious.
+  This is a massively useful tactic.
+
+
+
+
