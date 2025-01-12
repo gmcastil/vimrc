@@ -553,7 +553,27 @@ Today:
 - This happens a lot, where I want to eliminate a portion of one line and some
   of the next.  Using visual line mode to select it by hand is really tedious.
   This is a massively useful tactic.
+- This was really about using the `d{motion}` command to delete text, where the
+  motion could include things searching in the line
 
+52 Tracing selections with precision text objects
+- Text objects are the immportant detail here. What constitutes a text object to
+  Vim?
+- You can use visual mode for text objects with somethign like `vi]` or `va"`
+  but the real sauce is using them in operator pending mode (and I really want
+  to know if the matchit plugin will support begin-end as or function
+  endfunction as text objects
+- Remember that text objects aren't motions you can't navigate with them.
 
+var tpl = [
+'<a href="{url}">{title}</a>'
+]"{url}"
 
+53. Changing with text objets
+So, this fixes a problem I encounter all the time - where I want to delete
+inside a word and I'm left with an extra space I have to delete
+- Instead of `diw` to delete the word and then having to use `x` to delete the
+  space, use `daw` to delete around the word instead.
+- The common operation should be `ciw` to preserve the space so I can type the
+  new word and then escape and then `daw` to delete the word and be done.
 
