@@ -42,6 +42,10 @@ set wildmenu
 " Hide buffers instead
 set hidden
 
+" Default number format is octal, which isn't helpful, but if 0x or 0X are
+" leading the digits, then by all means, hex away with CTRL-A or CTRL-X
+set nrformats=hex
+
 " Message configuration ---------------------------------------------------- {{{
 " There are oodles of message configurations, so start by resetting to the Vim
 " default (Vi and Vim are different)
