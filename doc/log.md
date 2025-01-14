@@ -577,3 +577,40 @@ inside a word and I'm left with an extra space I have to delete
 - The common operation should be `ciw` to preserve the space so I can type the
   new word and then escape and then `daw` to delete the word and be done.
 
+Reprising Tip 10
+
+probe0
+probe1
+probe2
+probe3
+probe4
+probe5
+probe6
+probe7
+probe8
+probe9
+probe10
+probe11
+probe12
+probe13
+probe14
+probe15
+probe16
+probe17
+probe18
+probe19
+probe20
+probe21
+
+
+Want to transform that into what is expected....ok, so you use a macro. In this
+case, we yank it into a register, paste it, increment it, and then repeat the
+macro. Important thing to remember here is a) don't try to increment N times,
+you just yank the line above and increment it once and b) you dont start with
+all 22 probes, you start with 'probe0' and then copy, paste, edit, indent,
+whatever else you need and then last, you recall that you dont have to actually
+be at the number. The CTRL-A and CTRL-X commands act on the first one they find,
+so you just have to get close enough. If there are several in a row and you need
+to do it like `probe0       => array[4]` and you want to increment that to 4,
+you would do something like `f=<C-a>`. And of course, if CTRL-A is your tmux
+leader, you have to spam it twice.
