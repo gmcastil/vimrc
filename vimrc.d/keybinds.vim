@@ -121,4 +121,7 @@ nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
 nnoremap <silent> <leader>d :set operatorfunc=utils#mark_debug_operatorfunc<cr>g@
 xnoremap <silent> <leader>d :call utils#mark_debug()<cr>
 
+" Moves to the next item in the arglist and then deletes the previous one
+nnoremap <silent> <leader>ad :argdelete % \| next<cr>
+
 " }}}
