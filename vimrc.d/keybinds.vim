@@ -129,5 +129,7 @@ nnoremap <silent> <leader>ad :argdelete % \| next<cr>
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
 " Bring up the jump list
 nnoremap <silent> "j :jumps<cr>
+" Bring up the change list
+nnoremap <silent> "c :changes<cr>
 " }}}
 
