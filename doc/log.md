@@ -614,3 +614,16 @@ so you just have to get close enough. If there are several in a row and you need
 to do it like `probe0       => array[4]` and you want to increment that to 4,
 you would do something like `f=<C-a>`. And of course, if CTRL-A is your tmux
 leader, you have to spam it twice.
+
+78. First, I need to start using \v and \V for regex and verbatim searches.  
+
+Match "quoted words"----not quote marks.
+
+Match "quoted words"----not quote marks.
+Match "swapped words"----not quote marks.
+
+\v"\zs[^"]+\ze"
+
+Being able to construct a match and then use `<C-r>/` to insert the last pattern
+used is a hugely powerful tactic.  Use it.
+
