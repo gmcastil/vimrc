@@ -627,3 +627,11 @@ Match "swapped words"----not quote marks.
 Being able to construct a match and then use `<C-r>/` to insert the last pattern
 used is a hugely powerful tactic.  Use it.
 
+83. Couple things here - first, to avoid the behavior of incrementally searching
+    to the first match and then hitting escape and then having to fight it can
+    be solved by just hitting `<CR>`.  The second is that the `\zs` and `\ze`
+    portions of the expression allow me to match a larger pattern, but indicate
+    what constitutes a "match".
+
+84.
+
