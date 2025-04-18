@@ -498,5 +498,11 @@ workflow.
     including the `sudo tee` command.  To write the contents of a file as the
     super user, we use `:write! sudo tee % > /dev/null`
 
+87. Using vimgrep to count matches OR using it to populate the quickfix list
+    with the matches
+
+Ok, so using `vimgrep` with the quickfix list instead of scrolling through the
+entire document looking at every instance is a huge improvement to my workflow.
+
 
 
