@@ -114,11 +114,22 @@ endif
 " There are autocmds that should handle opening the QuickFix window based on the
 " result
 nnoremap <silent> <leader>m :silent! make \| silent redraw!<cr>
-" List contents of all registers (that typically contain pasteable text).
-nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
-
 " Using operator-pending mode, allow quick marking of VHDL signals for debug
 nnoremap <silent> <leader>d :set operatorfunc=utils#mark_debug_operatorfunc<cr>g@
 xnoremap <silent> <leader>d :call utils#mark_debug()<cr>
 
+" Moves to the next item in the arglist and then deletes the previous one
+nnoremap <silent> <leader>ad :argdelete % \| next<cr>
+
 " }}}
+
+" List mappings --- {{{
+
+" List contents of all registers (that typically contain pasteable text).
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<cr>
+" Bring up the jump list
+nnoremap <silent> "j :jumps<cr>
+" Bring up the change list
+nnoremap <silent> "c :changes<cr>
+" }}}
+

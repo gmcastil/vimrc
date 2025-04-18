@@ -62,12 +62,16 @@ command -v git >/dev/null 2>&1 || \
 # Make a location for using Vim's built-in package support (we install a very
 # minimal set of packages).
 mkdir -p "${PWD}/pack"
+# If there isn't a temp directory, Vim will still leave swap files all over the
+# place
+mkdir -p "${PWD}/tmp"
 
 plugin_dirs=(
     "${PWD}/pack/tpope/start/fugitive"
     "${PWD}/pack/tpope/start/commentary"
     "${PWD}/pack/tpope/start/unimpaired"
     "${PWD}/pack/tpope/start/dispatch"
+    "${PWD}/pack/tpope/start/surround"
     "${PWD}/pack/junegunn/start/easy-align"
     "${PWD}/pack/chrisbra/start/Recover"
 )
@@ -77,6 +81,7 @@ plugin_urls=(
     "https://github.com/tpope/vim-commentary.git"
     "https://github.com/tpope/vim-unimpaired.git"
     "https://github.com/tpope/vim-dispatch.git"
+    "https://github.com/tpope/vim-surround.git"
     "https://github.com/junegunn/vim-easy-align.git"
     "https://github.com/chrisbra/Recover.vim"
 )

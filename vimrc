@@ -65,6 +65,12 @@ catch
     call PrintError('Could not load filetype configuration.')
 endtry
 
+try
+    source $HOME/.vim/vimrc.d/quickfix.vim
+catch
+    call PrintError('Could not load QuickFix configuration.')
+endtry
+
 " Note that the status line uses some of the colors and such that are set up
 " by the gruvbox theme, so it needs to be loaded after colors and themes are
 " set up.

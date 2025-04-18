@@ -505,4 +505,139 @@ Ok, so using `vimgrep` with the quickfix list instead of scrolling through the
 entire document looking at every instance is a huge improvement to my workflow.
 
 
+I'm trying to grab a subset of my buffers and create an arglist that uses them.
+One tactic is to create an empty buffer and then read the output of find into
+the buffer like this: `:read! find . -type f -iname '*.vhd'`. This works great.
+Or, even better, I can read the contents directly into  the arglist command with
+something like
+```vim
+args `find . -type f -iname '*.vhd'`
+argadd foo.vhd
+```
+
+46-49. Moving by lines, display lines, and words
+
+50. Find by character is a tactic I don't use enough. Let's reveiw the motions:
+
+`f{char}`   Search to the next occurrence of the `char`
+`F{char}`   Reverse to the previous occurrence of the `char`
+`t{char}`   Search to the next occurrence of the `char`
+`T{char}`   Reverse to the previous occurrence of the `char`
+`;`         Repeats the last character-search command
+`,`         Reverses the last character-search command
+
+Improve your writing by deleting excellent adjectives.
+
+From Ingo Karkat on SO: *The pattern in Vi(m) is: Move around in normal
+mode. Make short inserts (a word here, a sentence there). Or manipulate
+the text with Ex commands like :substitute. Repeat.*
+
+I do not use Ex commands as much as I should
+
+Today:
+- Use R and gR to replace
+- Use A to append to end of line (dont move there and then append to word)
+
+51. Using search to navigate
+
+search for your target
+it only takes a moment
+to get where you want
+
+The idea is to use incremental search to jump to the appropriate place and this
+can be done in visual mode too or better as part of an operator pending
+operation.  So lets say we wan to eliminate the word target to moment (exclusive
+of the last word, which is a common use case).
+
+search for your target
+it only takes a moment
+to get where you want
+
+Today:
+- This is a huge thing, using the `f`, `F`, `t`, and `T` with search and delete
+  and also yank too, I suppose
+- This happens a lot, where I want to eliminate a portion of one line and some
+  of the next.  Using visual line mode to select it by hand is really tedious.
+  This is a massively useful tactic.
+- This was really about using the `d{motion}` command to delete text, where the
+  motion could include things searching in the line
+
+52 Tracing selections with precision text objects
+- Text objects are the immportant detail here. What constitutes a text object to
+  Vim?
+- You can use visual mode for text objects with somethign like `vi]` or `va"`
+  but the real sauce is using them in operator pending mode (and I really want
+  to know if the matchit plugin will support begin-end as or function
+  endfunction as text objects
+- Remember that text objects aren't motions you can't navigate with them.
+
+var tpl = [
+'<a href="{url}">{title}</a>'
+]"{url}"
+
+53. Changing with text objets
+So, this fixes a problem I encounter all the time - where I want to delete
+inside a word and I'm left with an extra space I have to delete
+- Instead of `diw` to delete the word and then having to use `x` to delete the
+  space, use `daw` to delete around the word instead.
+- The common operation should be `ciw` to preserve the space so I can type the
+  new word and then escape and then `daw` to delete the word and be done.
+
+Reprising Tip 10
+
+probe0
+probe1
+probe2
+probe3
+probe4
+probe5
+probe6
+probe7
+probe8
+probe9
+probe10
+probe11
+probe12
+probe13
+probe14
+probe15
+probe16
+probe17
+probe18
+probe19
+probe20
+probe21
+
+
+Want to transform that into what is expected....ok, so you use a macro. In this
+case, we yank it into a register, paste it, increment it, and then repeat the
+macro. Important thing to remember here is a) don't try to increment N times,
+you just yank the line above and increment it once and b) you dont start with
+all 22 probes, you start with 'probe0' and then copy, paste, edit, indent,
+whatever else you need and then last, you recall that you dont have to actually
+be at the number. The CTRL-A and CTRL-X commands act on the first one they find,
+so you just have to get close enough. If there are several in a row and you need
+to do it like `probe0       => array[4]` and you want to increment that to 4,
+you would do something like `f=<C-a>`. And of course, if CTRL-A is your tmux
+leader, you have to spam it twice.
+
+78. First, I need to start using \v and \V for regex and verbatim searches.  
+
+Match "quoted words"----not quote marks.
+
+Match "quoted words"----not quote marks.
+Match "swapped words"----not quote marks.
+
+\v"\zs[^"]+\ze"
+
+Being able to construct a match and then use `<C-r>/` to insert the last pattern
+used is a hugely powerful tactic.  Use it.
+
+83. Couple things here - first, to avoid the behavior of incrementally searching
+    to the first match and then hitting escape and then having to fight it can
+    be solved by just hitting `<CR>`.  The second is that the `\zs` and `\ze`
+    portions of the expression allow me to match a larger pattern, but indicate
+    what constitutes a "match".
+
+84.
 
