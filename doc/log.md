@@ -498,6 +498,12 @@ workflow.
     including the `sudo tee` command.  To write the contents of a file as the
     super user, we use `:write! sudo tee % > /dev/null`
 
+87. Using vimgrep to count matches OR using it to populate the quickfix list
+    with the matches
+
+Ok, so using `vimgrep` with the quickfix list instead of scrolling through the
+entire document looking at every instance is a huge improvement to my workflow.
+
 
 I'm trying to grab a subset of my buffers and create an arglist that uses them.
 One tactic is to create an empty buffer and then read the output of find into
@@ -614,3 +620,24 @@ so you just have to get close enough. If there are several in a row and you need
 to do it like `probe0       => array[4]` and you want to increment that to 4,
 you would do something like `f=<C-a>`. And of course, if CTRL-A is your tmux
 leader, you have to spam it twice.
+
+78. First, I need to start using \v and \V for regex and verbatim searches.  
+
+Match "quoted words"----not quote marks.
+
+Match "quoted words"----not quote marks.
+Match "swapped words"----not quote marks.
+
+\v"\zs[^"]+\ze"
+
+Being able to construct a match and then use `<C-r>/` to insert the last pattern
+used is a hugely powerful tactic.  Use it.
+
+83. Couple things here - first, to avoid the behavior of incrementally searching
+    to the first match and then hitting escape and then having to fight it can
+    be solved by just hitting `<CR>`.  The second is that the `\zs` and `\ze`
+    portions of the expression allow me to match a larger pattern, but indicate
+    what constitutes a "match".
+
+84.
+
