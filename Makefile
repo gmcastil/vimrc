@@ -17,5 +17,6 @@ clean:
 	@if [[ -L "${HOME}/.vim" ]]; then \
 		rm "${HOME}/.vim"; \
 	fi
+	rm -rf pack
 	git clean -dfx
 
