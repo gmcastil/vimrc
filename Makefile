@@ -11,7 +11,7 @@ setup:
 		ln -svf "$(PWD)" "$(HOME)/.vim"; \
 	fi
 	@git reset --hard && git clean -dfx
-	@./setup && ln -svf "$(PWD)" "$(HOME)/.vim"
+	@./setup && ln -svnf "$(PWD)" "$(HOME)/.vim"
 
 clean:
 	@if [[ -L "${HOME}/.vim" ]]; then \
