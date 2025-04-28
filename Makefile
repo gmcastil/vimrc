@@ -4,10 +4,10 @@ PWD		:= $(shell pwd)
 .PHONY: setup clean
 
 setup:
-	@if [[ -f "${HOME}/.vimrc" ]]; then \
-		rm -fv "${HOME}/.vimrc"; \
+	@if [[ -f "$(HOME)/.vimrc" ]]; then \
+		rm -fv "$(HOME)/.vimrc"; \
 	fi
-	@if [[ -L "${HOME}/.vim" ]]; then \
+	@if [[ -L "$(HOME)/.vim" ]]; then \
 		rm -vf "$(HOME)/.vim"; \
 		ln -svf "$(PWD)" "$(HOME)/.vim"; \
 	fi
@@ -15,7 +15,7 @@ setup:
 	@./setup
 
 clean:
-	@if [[ -L "${HOME}/.vim" ]]; then \
-		rm "${HOME}/.vim"; \
+	@if [[ -L "$(HOME)/.vim" ]]; then \
+		rm "$(HOME)/.vim"; \
 	fi
 	@rm -rf pack && git clean -dfx
