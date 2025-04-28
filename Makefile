@@ -7,11 +7,12 @@ setup:
 	@if [[ -f "${HOME}/.vimrc" ]]; then \
 		rm -fv "${HOME}/.vimrc"; \
 	fi
-	@if [[ ! -d "${HOME}/.vim" ]]; then \
+	@if [[ -L "${HOME}/.vim" ]]; then \
+		rm -vf "$(HOME)/.vim"; \
 		ln -svf "$(PWD)" "$(HOME)/.vim"; \
 	fi
 	@git reset --hard && git clean -dfx
-	@./setup && ln -svnf "$(PWD)" "$(HOME)/.vim"
+	@./setup
 
 clean:
 	@if [[ -L "${HOME}/.vim" ]]; then \
