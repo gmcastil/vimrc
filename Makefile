@@ -10,6 +10,8 @@ setup:
 	@if [[ ! -d "${HOME}/.vim" ]]; then \
 		ln -svf "$(PWD)" "$(HOME)/.vim"; \
 	fi
+	@git reset --hard && git clean -dfx
+	@./setup && ln -svf "$(PWD)" "$(HOME)/.vim"
 
 clean:
 	@if [[ -L "${HOME}/.vim" ]]; then \
