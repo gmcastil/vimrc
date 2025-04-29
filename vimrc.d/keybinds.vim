@@ -71,6 +71,11 @@ nnoremap <silent> <leader><leader> :b#<cr>
 " might get reused
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
+" The default behavior of `&` doesn't preserve flags, which is somewhat
+" unintuitive so remap it to :&&. This basically remaps & to 'repeat previous
+" search command exactly'.
+nnoremap <silent> & :&&<CR>
+
 " Repeats the last search but unfolds the code enough to make the cursor
 " visible, and then centers the search result in the buffer
 nnoremap n nzvzz
