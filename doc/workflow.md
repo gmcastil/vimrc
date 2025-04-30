@@ -14,3 +14,10 @@
    The `g&` command is a much larger hammer and can be used to repeat the
    previous substitution command over the entire file.
 
+3. Reusing the current search pattern with the `s//<replacement text>/` is
+   something I haven't used before, but it makes things a lot simpler.  So
+   instead of trying to get the range correct, the search string correct, the
+   replacement string and flags correct, focus instead on, at least for
+   non-trivial regular expressions, search for the pattern first and then use it
+   in a substitute command by using the current pattern.
+
