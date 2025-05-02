@@ -1,9 +1,9 @@
 # Workflow Changes
 
-1. Instead of searching for a pattern and then using `n` and `N` to navigagte
+1. Instead of searching for a pattern and then using `n` and `N` to navigate
    through the entire document, use `vimgrep` and the quickfix window to more
    clearly process the search results. This can even be done with multiple
-   documents
+   documents.
 
 2. Instead of repeating the last substitute command by paging through the
    command history, the last substitute command can be reused using `&`. This
@@ -21,3 +21,10 @@
    non-trivial regular expressions, search for the pattern first and then use it
    in a substitute command by using the current pattern.
 
+4. Visual mode can be used for selecting ranges of text for things like yanking
+   and pasting.  For things like entire lines or paragraphs, using text
+   objects and operations on those text objects is still superior. But if I
+   want to grab a sentence or some weird shape and then move it without having
+   to prune around it, visual mode is probably a good candidate to introduce.
+   Also, consider pairing this with `(` and `)` and similar (see `:help
+   object-motions`) to move to the next sentence or paragraph.
