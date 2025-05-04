@@ -74,6 +74,7 @@ plugin_dirs=(
     "${PWD}/pack/tpope/start/surround"
     "${PWD}/pack/junegunn/start/easy-align"
     "${PWD}/pack/chrisbra/start/Recover"
+    "${PWD}/pack/vim-python/start/python-syntax"
 )
 
 plugin_urls=(
@@ -84,6 +85,7 @@ plugin_urls=(
     "https://github.com/tpope/vim-surround.git"
     "https://github.com/junegunn/vim-easy-align.git"
     "https://github.com/chrisbra/Recover.vim"
+    "https://github.com/vim-python/python-syntax.git"
 )
 
 binaries=(
