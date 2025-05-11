@@ -28,3 +28,17 @@
    to prune around it, visual mode is probably a good candidate to introduce.
    Also, consider pairing this with `(` and `)` and similar (see `:help
    object-motions`) to move to the next sentence or paragraph.
+
+5. Instead of manually repeating tag searches or going back up to the top of the
+   tag stack and remembering which tag I picked, I can use the `:tnext` and
+   `:tprev` to go forwards and backwards between the tags in the list that I
+   selected.  This saves so much time!  And using `unimpaired` it gets even
+   easier, since those are just bound to `]t` and `[t`.  Can also jump to the
+   top of that list or bottom usting the `]T` and `[T` - this is a completely
+   different thing from the tag stack (read `:help tag-stack`).
+
+6. To look at the results of searching through a file, use `:vimgrep` to do it.
+   For example, to find a list of all phony Makefile targets do something like
+   this: `:vimgrep /\v^.PHONY:/g %`.  This will highlight them all, but more
+   importantly it will populate the QuickFix list, which can be navigated with
+   `[q` and `]q`.
