@@ -47,7 +47,7 @@ covering more ground than its name suggests.
 Native Vim packages only — no plugin manager. Each is a git submodule under
 `pack/plugins/start/`, which Vim auto-loads at startup with zero
 configuration. Currently: `vim-fugitive`, `vim-unimpaired`, `vim-gitgutter`,
-`vim-surround`.
+`vim-surround`, `vim-commentary`, `vim-repeat`, `fzf`, `fzf.vim`.
 
 **Submodules are pinned, not automatically updated.** Adding one records a
 fixed commit SHA in this repo's history; it never moves on its own. Updating

@@ -4,6 +4,46 @@ set -euo pipefail
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$script_dir"
 
+# Vim looks for its config at ~/.vimrc or ~/.vim/vimrc. Link this repo into
+# place as ~/.vim so it's found either way, backing up anything already
+# there (a real ~/.vim, a symlink to somewhere else, an old ~/.vimrc)
+# instead of clobbering it.
+link_vim_dir() {
+    local target="$HOME/.vim"
+
+    if [ "$target" = "$script_dir" ]; then
+        echo "==> Already running from $target, nothing to link"
+        return
+    fi
+
+    if [ -L "$target" ] && [ "$(readlink "$target")" = "$script_dir" ]; then
+        echo "==> $target already linked to this repo, skipping"
+        return
+    fi
+
+    if [ -e "$target" ] || [ -L "$target" ]; then
+        local backup="$target.old"
+        local n=1
+        while [ -e "$backup" ] || [ -L "$backup" ]; do
+            backup="$target.old.$n"
+            n=$((n + 1))
+        done
+        echo "==> Moving existing $target out of the way -> $backup"
+        mv "$target" "$backup"
+    fi
+
+    if [ -f "$HOME/.vimrc" ]; then
+        echo "==> Moving existing $HOME/.vimrc -> $HOME/.vimrc.old"
+        mv "$HOME/.vimrc" "$HOME/.vimrc.old"
+    fi
+
+    echo "==> Linking $target -> $script_dir"
+    ln -s "$script_dir" "$target"
+}
+
+echo "==> Linking this repo as ~/.vim..."
+link_vim_dir
+
 echo "==> Fetching plugin submodules..."
 git submodule update --init --recursive
 
