@@ -77,11 +77,14 @@ endif
 " Border style for the insert-mode completion popup. Box-drawing borders
 " need a UTF-8 encoding, so fall back to ascii otherwise. This also styles
 " the wildmenu popup ('wildoptions=pum' below), which explicitly shares the
-" same rendering as the completion popup.
-if $LANG == "en_US.UTF-8"
-  set pumborder=round
-else
-  set pumborder=ascii
+" same rendering as the completion popup. This is a relatively recent addition
+" so we check for it first.
+if exists("&pumborder")
+  if $LANG == "en_US.UTF-8" an
+    set pumborder=round
+  else
+    set pumborder=ascii
+  endif
 endif
 
 set nohlsearch
