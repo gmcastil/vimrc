@@ -1,16 +1,8 @@
 " Gruvbox configuration options need to be set before loading the colorscheme
-let g:gruvbox_italic=1
-"let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_italic = 1
+let g:gruvbox_termcolors = 256
 
-if &term == 'xterm-256color'
-  colorscheme gruvbox
-elseif &term == 'screen.xterm-256color'
-  colorscheme gruvbox8
-  set notermguicolors
-else
-  colorscheme gruvbox
-endif
+colorscheme gruvbox
 
 " Make sure to set the background to dark afterwards, or it will look uh...bad.
 set background=dark
-

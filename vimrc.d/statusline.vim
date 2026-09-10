@@ -7,6 +7,8 @@ highlight FilenameHighlightGroup cterm=bold ctermfg=11 ctermbg=239
 highlight FilenameHighlightGroupNC cterm=bold ctermfg=11 ctermbg=237
 highlight ColumnHighlightGroup cterm=bold ctermfg=1 ctermbg=239
 highlight ColumnHighlightGroupNC cterm=bold ctermfg=3 ctermbg=237
+highlight ModifiedHighlightGroup cterm=bold ctermfg=1 ctermbg=239
+highlight ModifiedHighlightGroupNC cterm=bold ctermfg=1 ctermbg=237
 
 " Possible current mode strings
 let g:currentmode={
@@ -31,6 +33,25 @@ let g:currentmode={
     \ 't'      : 'Term'
     \}
 
+" Indicates whether the current buffer is modified, readonly, or otherwise
+" unmodifiable. Returns '' for a plain, unmodified, modifiable buffer.
+function s:BufferStatus(active) abort
+  if !&modified && !&readonly && &modifiable
+    return ''
+  endif
+
+  if &modified
+    let l:symbol = '+'
+  elseif &readonly
+    let l:symbol = 'RO'
+  else
+    let l:symbol = 'X'
+  endif
+
+  let l:group = a:active ? 'ModifiedHighlightGroup' : 'ModifiedHighlightGroupNC'
+  return ' %#' . l:group . '#[' . l:symbol . ']%*'
+endfunction
+
 " Create a sttus
 function CreateStatusLine() abort
 
@@ -51,9 +72,9 @@ function CreateStatusLine() abort
   if g:statusline_winid == win_getid(winnr())
     " Display the filename with the appropriate background color, depending on
     " whether we are in an active or inactive window
-    let sl .= "%#FilenameHighlightGroup#%F%*"
+    let sl .= "%#FilenameHighlightGroup#%F%*" . s:BufferStatus(1)
   else
-    let sl .= "%#FilenameHighlightGroupNC#%F%*"
+    let sl .= "%#FilenameHighlightGroupNC#%F%*" . s:BufferStatus(0)
   endif
 
   " Now begin right alignment

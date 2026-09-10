@@ -16,10 +16,10 @@ augroup END
 " Configure QuickFix window behavior -------------------------------------- {{{
 augroup QuickFixWindow
     autocmd!
-    " Fire this anytime something touches the quickfix window, except commands
-    " like lgrep or lmake. This opens the quickfix window below whatever the
-    " current vertical split is (instead of all the way to the right, which is
-    " the default)
+    " Fire this anytime something touches the quickfix window, except
+    " commands like lgrep or lmake. This opens the quickfix window below
+    " whatever the current vertical split is (instead of all the way to the
+    " right, which is the default)
     autocmd QuickFixCmdPost [^l]* :belowright cwindow
 augroup END
 " }}}

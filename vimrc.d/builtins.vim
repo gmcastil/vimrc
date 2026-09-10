@@ -9,7 +9,6 @@ else
 endif
 
 " Enable the :Man command shipped inside Vim's man filetype plugin
-if exists(':man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man' && !has('nvim')
+if exists(':man') != 2 && !exists('g:loaded_man') && &filetype !=? 'man'
     runtime ftplugin/man.vim
 endif
-
